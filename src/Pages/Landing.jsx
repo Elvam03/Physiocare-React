@@ -126,7 +126,7 @@ const Landing = () => {
 
 
             {/* Main Content */}
-            <main id="myHome">
+            <main id="home">
                 <div
                     className="h-screen bg-fixed bg-center bg-cover"
                     style={{ backgroundImage: "url('/Images/landing img.jpg')" }}
@@ -160,7 +160,7 @@ const Landing = () => {
 
 
             {/* About Section */}
-            <section id="myAbout" className="py-16 px-4 bg-white">
+            <section id="about" className="py-16 px-4 bg-white">
                 <div className="flex flex-col md:flex-row">
                     <div className="md:w-1/2 px-8 py-4 text-center">
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-teal-500 mb-8">
@@ -205,7 +205,7 @@ const Landing = () => {
             </section>
 
             {/* Services Section */}
-            <section id="myServices" className="bg-gray-100 py-6 px-4 text-center">
+            <section id="services" className="bg-gray-100 py-6 px-4 text-center">
                 <h1 className="text-4xl font-bold text-blue-900 mb-4">Services</h1>
                 <p className="text-gray-400 max-w-lg mx-auto">
                     Create an account and expolore various features.
@@ -219,7 +219,7 @@ const Landing = () => {
             </section>
 
             {/* Resources Section */}
-            <section>
+            <section id="resources">
                 <div>
                     <ResourceCenter />
 
@@ -227,7 +227,7 @@ const Landing = () => {
             </section>
 
             {/* Community Section */}
-           <div className="mt-4">
+           <div className="mt-4" id="community">
             <Community/>
 
            </div>
@@ -238,7 +238,7 @@ const Landing = () => {
 
            </div>
             {/* Contact Section */}
-            <div>
+            <div id="contact">
                 <ContactSection/>
             </div>
 
