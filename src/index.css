@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.logIn{
+    @apply underline sm:text-base text-white uppercase tracking-wider transform hover:scale-125 hover:bg-opacity-50 transition ease-out duration-300;
+}
+.signUp{
+    @apply ml-5 border-2 sm:text-base rounded-3xl p-2 border-white text-white uppercase hover:bg-white hover:text-gray-500 transition ease-out duration-500;
+}
+.socialIcons{
+    @apply h-9 w-9 m-2 border-gray-900 border-2 m-2 rounded-md p-1 cursor-pointer transition-transform duration-300 hover:bg-gray-200 hover:-translate-y-1 hover:shadow-md hover:shadow-gray-400;
+}
+
