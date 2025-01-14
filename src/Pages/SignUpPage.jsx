@@ -44,6 +44,16 @@ const SignUpPage = () => {
         </div>
       </div>
 
+      <div className="flex gap-1 justify-center items-center mt-4 mb-3">
+              <p className="text-black text-white text-center">Already have an account?</p>
+              <Link
+                to="/login"
+                className="text-blue-600 font-semibold text-orange-100 text-center"
+              >
+                Log In
+              </Link>
+            </div>
+
       {/* Client SignUp Form */}
       {showForm === 'client' && (
         <section id="signUp-client" className="min-h-screen flex items-center justify-center px-4 sec mb-5">
@@ -72,10 +82,7 @@ const SignUpPage = () => {
 
             <div id="error-message" className="text-red-600 mt-4"></div>
 
-            <div className="flex gap-1 justify-center items-center mt-4">
-              <p className="text-black">Already have an account?</p>
-              <a href="logIn.html" className="text-blue-600 font-semibold">Log In</a>
-            </div>
+            
           </div>
         </section>
       )}
@@ -117,10 +124,7 @@ const SignUpPage = () => {
 
             <div id="error-message" className="text-red-600 mt-4"></div>
 
-            <div className="flex gap-1 justify-center items-center mt-4">
-              <p className="text-black">Already have an account?</p>
-              <a href="logIn.html" className="text-blue-600 font-semibold">Log In</a>
-            </div>
+           
           </div>
         </section>
       )}

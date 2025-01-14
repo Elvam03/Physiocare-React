@@ -45,15 +45,20 @@ const LoginPage = () => {
         </form>
         <div className="mt-4 text-center text-sm">
           <div>
-            <a href="forgot-password.html" className="text-blue-600 hover:underline">
+            <a href="#" className="text-blue-600 hover:underline">
               Forgot Password?
             </a>
           </div>
           <div className="mt-2">
             Don't have an account?{" "}
-            <a href="/signup" className="text-blue-600 hover:underline">
-              Sign Up
-            </a>
+            <Link
+                to="/signup"
+                className="text-blue-600 hover:underline"
+              >
+                Sign Up
+              </Link>
+            
+            
           </div>
         </div>
       </div>

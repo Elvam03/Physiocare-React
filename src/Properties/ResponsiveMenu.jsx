@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
+
 
 const ResponsiveMenu = ({ open, setOpen }) => {
   const sidebarRef = useRef(null);
@@ -56,12 +58,20 @@ const ResponsiveMenu = ({ open, setOpen }) => {
 
             {/* SignIn section */}
             <div className="flex justify-between items-center my-6">
-              <a href="/login" className="logIn ml-10">
+              
+              <Link
+                to="/login"
+                className="logIn ml-10"
+              >
                 Log In
-              </a>
-              <a href="/signup" className="signUp mr-10">
+              </Link>
+              <Link
+                to="/signup"
+                className="signUp mr-10"
+              >
                 Sign Up
-              </a>
+              </Link>
+              
             </div>
 
             <div className="flex justify-center my-2 md:hidden">
