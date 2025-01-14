@@ -14,7 +14,7 @@ const LoginPage = () => {
           ✖
         </Link>
         <div>
-     <Link to="/" className="text-gray-900 hover:text-gray-800 float-right text-3xl">
+     <Link to="/dashboard" className="text-gray-900 hover:text-gray-800 float-right text-3xl">
      &rarr;
           </Link>
      </div>
