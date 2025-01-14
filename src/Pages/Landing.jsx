@@ -6,6 +6,7 @@ import ResourceCenter from "../Properties/ResourceCenter";
 import Community from "../Properties/CommunitySection";
 import SocialProof from "../Properties/SocialProof";
 import ContactSection from "../Properties/ContactSection";
+import { Link } from "react-router-dom";
 
 
 
@@ -86,18 +87,19 @@ const Landing = () => {
 
                             className={`lg:col-span-2 lg:flex justify-end lg:items-center  absolute top-0 right-5 py-5 hidden lg:block`}
                         >
-                            <a
-                                href="#"
+                            <Link
+                                to="/login"
                                 className="logIn"
                             >
                                 Log In
-                            </a>
-                            <a
-                                href="#"
+                            </Link>
+                            <Link
+                                to="/signup"
                                 className="signUp"
                             >
                                 Sign Up
-                            </a>
+                            </Link>
+                            
                         </div>
 
                         {/*Mobile bugger section */}
@@ -227,19 +229,19 @@ const Landing = () => {
             </section>
 
             {/* Community Section */}
-           <div className="mt-4" id="community">
-            <Community/>
+            <div className="mt-4" id="community">
+                <Community />
 
-           </div>
+            </div>
 
             {/* Social Proof Section */}
             <div>
-            <SocialProof/>
+                <SocialProof />
 
-           </div>
+            </div>
             {/* Contact Section */}
             <div id="contact">
-                <ContactSection/>
+                <ContactSection />
             </div>
 
         </div>

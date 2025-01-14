@@ -46,7 +46,7 @@ const Services = () => {
     },
     {
       id: 7,
-      title: "Daily Health Challanges",
+      title: "Daily Health Challenges",
       description: "Take on daily fitness or health challenges to stay motivated and active.",
       
     },
