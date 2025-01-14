@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return(
-    <Router>
+    
       <Routes>
         {/* Landing Page */}
         <Route path="/" element={<Landing />} />
@@ -17,7 +17,7 @@ function App() {
         <Route path="/login" element={<LogInPage />} />
         <Route path="/signup" element={<SignUpPage />} />
       </Routes>
-    </Router>
+    
 
   )
  
