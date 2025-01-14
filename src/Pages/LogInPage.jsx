@@ -3,11 +3,21 @@ import { Link } from "react-router-dom";
 
 const LoginPage = () => {
   return (
-    <div className="min-h-screen flex justify-center items-center bg-gradient-to-r from-teal-500 to-blue-900">
+    <div className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-teal-500 to-blue-900 p-4">
+
+<h2 className="text-4xl font-semibold m-2 text-white text-center">Hello,</h2>
+<h2 className="text-4xl font-semibold m-5 text-white text-center">Glad to have you back!</h2>
+
+
       <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
-        <Link to="/" className="text-gray-500 hover:text-gray-800 float-right text-lg">
+        <Link to="/" className="text-gray-500 hover:text-gray-800 float-left text-lg">
           ✖
         </Link>
+        <div>
+     <Link to="/" className="text-gray-900 hover:text-gray-800 float-right text-3xl">
+     &rarr;
+          </Link>
+     </div>
         <h2 className="text-black text-3xl font-semibold text-center mb-10">Log In</h2>
         <form action="/login" method="POST" className="flex flex-col">
           <input

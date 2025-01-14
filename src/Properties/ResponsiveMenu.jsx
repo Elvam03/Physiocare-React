@@ -56,10 +56,10 @@ const ResponsiveMenu = ({ open, setOpen }) => {
 
             {/* SignIn section */}
             <div className="flex justify-between items-center my-6">
-              <a href="#" className="logIn ml-10">
+              <a href="/login" className="logIn ml-10">
                 Log In
               </a>
-              <a href="#" className="signUp mr-10">
+              <a href="/signup" className="signUp mr-10">
                 Sign Up
               </a>
             </div>
