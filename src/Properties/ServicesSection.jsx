@@ -92,7 +92,7 @@ const Services = () => {
                   to="/signup"
                   className="mt-6 text-lg font-semibold text-blue-500 hover:underline"
                 >
-                  Sign Uo / Log In
+                  Sign Up / Log In
                 </Link>
                
               </div>

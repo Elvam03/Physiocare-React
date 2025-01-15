@@ -8,7 +8,7 @@ function Sidebar() {
 
   const Menus = [
     { title: "Dahboard", src: "dashboard", path: "/dashboard" },
-    { title: "Recommended", src: "recomm2", path: "/recommended" },
+    { title: "Profile", src: "user3", path: "/profile" },
     { title: "Progress", src: "loading", path: "/progress" },
     { title: "Schedule", src: "calendar", path: "/schedule" },
     { title: "Library", src: "video-player", path: "/library", gap: true },
@@ -49,7 +49,7 @@ function Sidebar() {
       {/* Sidebar */}
       <div
         ref={sidebarRef}
-        className={`fixed top-0 left-0 h-full bg-gray-200 p-5 z-30 transition-transform duration-300 ${
+        className={`fixed top-0 left-0 h-full bg-gray-200 p-5 z-30 transition-transform duration-300 overflow-y-auto ${
           open ? "translate-x-0 w-72" : "-translate-x-full"
         }`}
       >

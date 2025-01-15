@@ -12,3 +12,88 @@
     @apply h-9 w-9 m-2 border-gray-900 border-2 m-2 rounded-md p-1 cursor-pointer transition-transform duration-300 hover:bg-gray-200 hover:-translate-y-1 hover:shadow-md hover:shadow-gray-400;
 }
 
+/* Book container */
+.book-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  /* Each page in the book */
+  .book-page {
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  /* Lines inside the page (like writing on paper) */
+  .book-page .line {
+    height: 1px;
+    background-color: #e5e5e5;
+    margin: 10px 0;
+    border: none;
+  }
+  
+  /* Optional: Adding page numbers */
+  .page-number {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 12px;
+    color: #999;
+  }
+  
+  /* Content inside the page */
+  .page-content {
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre-line; /* Preserve line breaks in content */
+  }
+
+  /* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Background overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure the modal is on top of other content */
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  /* Prevent body from scrolling when modal is open */
+  body.modal-open {
+    overflow: hidden;
+  }
+  
+  
