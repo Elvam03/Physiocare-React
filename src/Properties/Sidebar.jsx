@@ -56,7 +56,7 @@ function Sidebar() {
         } overflow-y-auto`}
       >
         {/* Logo and Title */}
-        <div className="flex gap-x-4 items-center mt-14">
+        <div className="flex gap-x-4 justify-center items-center mt-14">
           <img
             src="/Images/logo.png"
             alt="Logo"
