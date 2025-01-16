@@ -9,21 +9,23 @@ function Sidebar() {
   const Menus = [
     { title: "Dahboard", src: "dashboard", path: "/dashboard" },
     { title: "Profile", src: "user3", path: "/profile" },
+    { title: "Appointments", src: "calendar", path: "/appointments" },
     { title: "Progress", src: "loading", path: "/progress" },
-    { title: "Schedule", src: "calendar", path: "/schedule" },
-    { title: "Library", src: "video-player", path: "/library", gap: true },
+    { title: "Chats", src: "chats", path: "/chat", gap: true },
+    { title: "Consultations", src: "consultations", path: "/consultations" },
+    { title: "Library", src: "library", path: "/library", gap: true },
     { title: "Community", src: "people", path: "/community" },
     { title: "Clinics", src: "building", path: "/clinics", gap: true },
-    { title: "Physios'", src: "physiotherapist", path: "/physios" },
+    { title: "Physios'", src: "physiotherapist", path: "/physio" },
     { title: "Settings", src: "settings", path: "/settings", gap: true },
   ];
 
-  // Close the sidebar when the route changes
+  
   useEffect(() => {
-    setOpen(false); // Close the sidebar on route change
+    setOpen(false); 
   }, [location.pathname]);
 
-  // Close the sidebar when clicking outside
+  
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
@@ -37,7 +39,7 @@ function Sidebar() {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative ">
       {/* Toggle Button */}
       <button
         className="fixed top-4 left-4 bg-gray-200 p-2 rounded-md shadow-md z-50"
@@ -49,9 +51,9 @@ function Sidebar() {
       {/* Sidebar */}
       <div
         ref={sidebarRef}
-        className={`fixed top-0 left-0 h-full bg-gray-200 p-5 z-30 transition-transform duration-300 overflow-y-auto ${
+        className={`fixed top-0 left-0 h-full bg-gray-200 p-5 z-30 transition-transform duration-300 ${
           open ? "translate-x-0 w-72" : "-translate-x-full"
-        }`}
+        } overflow-y-auto`}
       >
         {/* Logo and Title */}
         <div className="flex gap-x-4 items-center mt-14">

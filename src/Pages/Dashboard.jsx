@@ -22,7 +22,7 @@ const Dashboard = () => {
             <div className="min-h-screen bg-gradient-to-r from-blue-100 via-green-100 to-blue-50 p-6">
                 {/* Welcome Section */}
                 <div className="bg-blue-100 p-4 rounded-lg mb-6 shadow-md">
-                    <h2 className="text-2xl font-bold my-4">Welcome Back!</h2>
+                    <h2 className="text-2xl font-bold my-4">Welcome!</h2>
 
                     <h2 className="text-lg font-semibold pt-4">Daily Health Tip</h2>
                     <p className="text-gray-600 mt-2">
