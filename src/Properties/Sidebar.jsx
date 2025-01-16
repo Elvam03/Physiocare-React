@@ -13,7 +13,7 @@ function Sidebar() {
     { title: "Progress", src: "loading", path: "/progress" },
     { title: "Chats", src: "chats", path: "/chat", gap: true },
     { title: "Consultations", src: "consultations", path: "/consultations" },
-    { title: "Library", src: "library", path: "/library", gap: true },
+    { title: "Library", src: "library", path: "/library"},
     { title: "Community", src: "people", path: "/community" },
     { title: "Clinics", src: "building", path: "/clinics", gap: true },
     { title: "Physios'", src: "physiotherapist", path: "/physio" },
