@@ -16,6 +16,10 @@ const Reports = () => {
       title: "Progress",
       content: `Days Completed: 15\nGoals Achieved: Weight loss - 2 kg\nMedals: Silver Medal for Consistency\n`,
     },
+    {
+      title: "Appointment History",
+      content: `Dr John Doe: 15/11/2024\nDr Mary H: 01/1/2025\nDr Sano Noel: 08/01/2025\n`,
+    },
   ];
 
   const handleNext = () => {
