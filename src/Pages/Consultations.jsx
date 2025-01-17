@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Sidebar from "../Properties/Sidebar";
 import Navbar from "../Properties/Navbar";
 
-const Chat = () => {
+const Consultations = () => {
     return(
         <div>
             
@@ -15,10 +15,10 @@ const Chat = () => {
             </div>
 
             <div className="bg-gray-100 h-screen">
-                My chats
+                My Virtual Consultations
             </div>
         </div>
     )
 }
 
-export default Chat;
+export default Consultations;

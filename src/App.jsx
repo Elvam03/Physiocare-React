@@ -9,6 +9,7 @@ import Appointments from "./Pages/Appointments.jsx";
 import Physio from './Pages/Physio.jsx';
 import Chat from './Pages/Chat.jsx';
 import Progress from './Pages/Progress.jsx';
+import Consultations from './Pages/Consultations.jsx';
 
 
 
@@ -27,6 +28,8 @@ function App() {
          <Route path="/physio" element={<Physio />} />
          <Route path="/chat" element={<Chat />} />
          <Route path="/progress" element={<Progress />} />
+         <Route path="/consultations" element={<Consultations />} />
+
 
 
 

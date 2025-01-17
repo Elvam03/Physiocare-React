@@ -6,7 +6,7 @@ const Progress = () => {
     return(
         <div>
             
-            <div>
+            <div className="sticky top-0 z-20">
                 <Navbar/>
 
             </div>

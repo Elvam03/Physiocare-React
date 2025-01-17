@@ -3,6 +3,8 @@ import Sidebar from "../Properties/Sidebar";
 import Navbar from "../Properties/Navbar";
 import "react-calendar/dist/Calendar.css";
 import Calendar from "react-calendar";
+import { Link, useLocation } from "react-router-dom";
+
 
 const Physio = () => {
     const [selectedSpecialty, setSelectedSpecialty] = useState("");
@@ -67,6 +69,8 @@ const Physio = () => {
                 rating: 4.2,
                 bio: "Expert in pain management",
                 experience: "5 years",
+                image: "https://via.placeholder.com/150",
+                calendar: ["2025-01-23", "2025-01-25"],
             },
             {
                 name: "Lewis Tomas",
@@ -74,6 +78,8 @@ const Physio = () => {
                 rating: 4.5,
                 bio: "Skilled in pain relief.",
                 experience: "7 years",
+                image: "https://via.placeholder.com/150",
+                calendar: ["2025-01-23", "2025-01-25"],
             },
         ],
         fitness: [
@@ -83,6 +89,8 @@ const Physio = () => {
                 rating: 4.3,
                 bio: "Expert Fitness trainer",
                 experience: "2 years",
+                image: "https://via.placeholder.com/150",
+                calendar: ["2025-01-23", "2025-01-25"],
             },
             {
                 name: "Lonah J",
@@ -90,6 +98,8 @@ const Physio = () => {
                 rating: 4.5,
                 bio: "Skilled personal trainer.",
                 experience: "4 years",
+                image: "https://via.placeholder.com/150",
+                calendar: ["2025-01-23", "2025-01-25"],
             },
         ],
         weight: [
@@ -99,6 +109,8 @@ const Physio = () => {
                 rating: 4.2,
                 bio: "Expert in weight management",
                 experience: "5 years",
+                image: "https://via.placeholder.com/150",
+                calendar: ["2025-01-23", "2025-01-25"],
             },
             {
                 name: "Faith M.",
@@ -106,6 +118,8 @@ const Physio = () => {
                 rating: 4.5,
                 bio: "Skilled in wightloss Process management",
                 experience: "1 years",
+                image: "https://via.placeholder.com/150",
+                calendar: ["2025-01-23", "2025-01-25"],
             },
         ],
     };
@@ -156,8 +170,8 @@ const Physio = () => {
                             key={specialty.id}
                             onClick={() => setSelectedSpecialty(specialty.id)}
                             className={`px-4 py-2 border rounded-lg text-sm ${selectedSpecialty === specialty.id
-                                    ? "bg-blue-600 text-white"
-                                    : "bg-white text-blue-600"
+                                ? "bg-blue-600 text-white"
+                                : "bg-white text-blue-600"
                                 } hover:bg-blue-500 hover:text-white transition`}
                         >
                             {specialty.name}
@@ -234,13 +248,18 @@ const Physio = () => {
                                                     </ul>
                                                 </div>
                                             )}
+                                            
 
-                                            <button className="px-4 py-2 bg-teal-500 text-white rounded-lg hover:bg-green-600 mt-4">
+                                            <button className="px-4 py-2 bg-teal-500 text-white rounded-lg hover:bg-teal-600 mt-4">
                                                 Book
                                             </button>
-                                            <button className="text-blue-500 ml-4 hover:underline mt-4">
+                                            <Link
+                                                to="/chat"
+                                                className="text-blue-500 ml-4 hover:underline mt-4"
+                                            >
                                                 Message
-                                            </button>
+                                            </Link>
+                                           
                                         </div>
                                     </div>
                                 )}
