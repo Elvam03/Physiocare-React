@@ -10,6 +10,10 @@ import Physio from './Pages/Physio.jsx';
 import Chat from './Pages/Chat.jsx';
 import Progress from './Pages/Progress.jsx';
 import Consultations from './Pages/Consultations.jsx';
+import Library from './Pages/Library.jsx';
+import Community from './Pages/Community.jsx';
+import Clinics from './Pages/Clinics.jsx';
+import Settings from './Pages/Settings.jsx';
 
 
 
@@ -29,6 +33,10 @@ function App() {
          <Route path="/chat" element={<Chat />} />
          <Route path="/progress" element={<Progress />} />
          <Route path="/consultations" element={<Consultations />} />
+         <Route path="/library" element={<Library />} />
+         <Route path="/community" element={<Community />} />
+         <Route path="/clinics" element={<Clinics />} />
+         <Route path="/settings" element={<Settings />} />
 
 
 

@@ -5,6 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 
 
 
+
 const Progress = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [plans, setPlans] = useState([]);
@@ -149,21 +150,37 @@ const Progress = () => {
                                     <p className="text-sm text-gray-500">{`Target: ${plan.bodyPart}`}</p>
                                     <p className="text-sm text-gray-500">{`Start Date: ${plan.startDate}`}</p>
                                     <p className="text-sm text-gray-500">Recommended Videos:</p>
-                                    <ul className="text-sm text-gray-700 list-disc ml-5">
+                                    <ul className="text-sm text-blue-500 flex flex-col items-center list-disc ml-5">
                                         {plan.videos.map((video, i) => (
-                                            <li key={i}>{video}</li>
+                                            <Link className=" p-2"
+                                                to="/library"
+                                                key={i}>{video}</Link>
                                         ))}
                                     </ul>
                                 </div>
                                 <button
-                                    className="px-2 md:px-4 py-1 bg-teal-500 text-white text-sm rounded-lg"
+                                    className="px-4 py-1 bg-green-500 text-white text-sm rounded-lg"
                                     onClick={() => {
                                         setCompletedPlans([...completedPlans, plan]);
                                         setPlans(plans.filter((_, i) => i !== index));
                                     }}
                                 >
-                                    Mark Complete
+                                    Mark as Complete
                                 </button>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
+                {/*Cmpleted exercises */}
+
+                <div className="bg-white shadow-md rounded-lg mt-8 p-6">
+                    <h3 className="text-lg font-semibold text-gray-800 mb-4">My Completed Plans</h3>
+                    <ul className="space-y-4">
+                        {completedPlans.map((plan, index) => (
+                            <li key={index}>
+                                <h4 className="text-md font-semibold">{plan.goal}</h4>
+                                <p className="text-sm text-gray-500">{`Completed on: ${new Date().toLocaleDateString()}`}</p>
                             </li>
                         ))}
                     </ul>
@@ -216,6 +233,15 @@ const Progress = () => {
                                         className="w-full p-2 border rounded-lg"
                                         required
                                     />
+                                </div>
+                                <div className="mb-4 flex gap-2">
+                                    <input type="checkbox"
+                                        name="notification"
+                                        className="p-2"
+                                    />
+                                    <label className="block text-sm text-gray-600">Get Notifications via email</label>
+
+
                                 </div>
                                 <div className="flex justify-end gap-4">
                                     <button
