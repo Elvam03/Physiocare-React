@@ -130,7 +130,7 @@ const Landing = () => {
             {/* Main Content */}
             <main id="home">
                 <div
-                    className="h-screen bg-fixed bg-center bg-auto"
+                    className="h-screen md:bg-fixed bg-center bg-cover"
                     style={{ backgroundImage: "url('/Images/landing img.jpg')" }}
                 >
                     <div className="flex items-center justify-center h-full bg-black bg-opacity-50">
