@@ -7,15 +7,16 @@ function PhysioSidebar() {
   const sidebarRef = useRef(null); // Ref for the sidebar
 
   const Menus = [
-    { title: "Dahboard", src: "dashboard", path: "/physioDashboad" },
+    { title: "Dahboard", src: "dashboard", path: "/physioDashboard" },
     { title: "Appointments", src: "calendar", path: "/physioAppointments" },
     { title: "Patients", src: "patient", path: "/patient" },
-    { title: "Chats", src: "chats", path: "/chat", gap: true },
-    { title: "Consultations", src: "consultations", path: "/consultations" },
-    { title: "Browse", src: "building", path: "/browse", gap: true },
-    { title: "Library", src: "library", path: "/library"},
-    { title: "Community", src: "people", path: "/community" },
-    { title: "Settings", src: "settings", path: "/settings", gap: true },
+    { title: "Chats", src: "chats", path: "/physioChats", gap: true },
+    { title: "Consultations", src: "consultations", path: "/physioConsultations" },
+    { title: "Clinics", src: "building", path: "/physioClinics", gap: true },
+    { title: "Physios", src: "physiotherapist", path: "/physiotherapists"},
+    { title: "Library", src: "library", path: "/physioLibrary", gap: true },
+    { title: "Community", src: "people", path: "/physioCommunity" },
+    { title: "Settings", src: "settings", path: "/physioSettings", gap: true },
   ];
 
   

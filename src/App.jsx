@@ -17,6 +17,16 @@ import Settings from './Pages/Settings.jsx';
 import PhysioDashboard from './Pages/PhysioDashboard.jsx';
 import OnboardingPage from './Pages/OnboardingPage.jsx';
 import PhysioAppointments from './Pages/PhysioAppointments.jsx';
+import Patient from './Pages/Patient.jsx';
+import PhysioChats from './Pages/PhysioChats.jsx';
+import PhysioConsultations from './Pages/PhysioConsultations.jsx';
+import PhysioClinics from './Pages/PhysioClinics.jsx';
+import Physiotherapist from './Pages/Physiotherapist.jsx';
+import PhysioLibrary from './Pages/PhysioLibrary.jsx';
+import PhysioCommunity from './Pages/PhysioCommunity.jsx';
+import PhysioSettings from './Pages/PhysioSettings.jsx';
+
+
 
 
 
@@ -44,6 +54,19 @@ function App() {
          <Route path="/onboarding" element={<OnboardingPage />} />
          <Route path="/physioDashboard" element={<PhysioDashboard />} />
          <Route path="/physioAppointments" element={<PhysioAppointments />} />
+         <Route path="/patient" element={<Patient />} />
+         <Route path="/physioChats" element={<PhysioChats />} />
+         <Route path="/physioConsultations" element={<PhysioConsultations />} />
+         <Route path="/physioClinics" element={<PhysioClinics />} />
+         <Route path="/physiotherapists" element={<Physiotherapist />} />
+         <Route path="/physioLibrary" element={<PhysioLibrary />} />
+         <Route path="/physioCommunity" element={<PhysioCommunity />} />
+         <Route path="/physioSettings" element={<PhysioSettings />} />
+
+
+
+
+
 
 
 

@@ -58,7 +58,7 @@ const SignUpPage = () => {
             }`}
             onClick={() => handleFormSwitch("physio")}
           >
-            Physiotherapist
+            Physio
           </button>
         </div>
       </div>
@@ -121,7 +121,7 @@ const SignUpPage = () => {
           className="min-h-screen flex items-center justify-center px-4 mb-5"
         >
           <div className="bg-white p-8 rounded-md w-full max-w-lg">
-            <h2 className="text-black text-3xl font-semibold mb-6 text-center">Physiotherapist Sign Up</h2>
+            <h2 className="text-black text-3xl font-semibold mb-6 text-center">Physio Sign Up</h2>
             <form className="flex flex-col space-y-6" onSubmit={handlePhysioSignUp}>
               {/* Fields for physiotherapist sign up */}
               <label htmlFor="signup-physio-name" className="text-gray-700">

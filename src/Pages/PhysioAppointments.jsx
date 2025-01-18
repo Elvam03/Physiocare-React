@@ -92,7 +92,7 @@ const PhysioAppointments = () => {
             {/* Upcoming Appointments Section */}
             <div className="bg-white rounded-lg shadow-md p-4">
               <h4 className="text-lg font-semibold mb-4 text-gray-700">
-                Upcoming Appointments
+                New Bookings
               </h4>
               <ul>
                 {upcomingAppointments.map((appointment) => (
