@@ -14,6 +14,10 @@ import Library from './Pages/Library.jsx';
 import Community from './Pages/Community.jsx';
 import Clinics from './Pages/Clinics.jsx';
 import Settings from './Pages/Settings.jsx';
+import PhysioDashboard from './Pages/PhysioDashboard.jsx';
+import OnboardingPage from './Pages/OnboardingPage.jsx';
+import PhysioAppointments from './Pages/PhysioAppointments.jsx';
+
 
 
 
@@ -37,6 +41,11 @@ function App() {
          <Route path="/community" element={<Community />} />
          <Route path="/clinics" element={<Clinics />} />
          <Route path="/settings" element={<Settings />} />
+         <Route path="/onboarding" element={<OnboardingPage />} />
+         <Route path="/physioDashboard" element={<PhysioDashboard />} />
+         <Route path="/physioAppointments" element={<PhysioAppointments />} />
+
+
 
 
 

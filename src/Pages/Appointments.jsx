@@ -24,14 +24,14 @@ const Appointments = () => {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 p-6">
+        <div className="flex-1 p-2">
           <h3 className="text-2xl font-semibold text-center text-blue-900 mb-6">
             Manage Your Appointments
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Calendar Card */}
-            <div className="bg-white rounded-lg shadow-md p-6 flex flex-col justify-center items-center">
+            <div className="bg-white rounded-lg shadow-md p-2 flex flex-col justify-center items-center">
               <h4 className="text-lg font-semibold mb-4 text-center text-gray-700">
                 Calendar
               </h4>
@@ -51,7 +51,7 @@ const Appointments = () => {
             </div>
 
             {/* Schedule Card */}
-            <div className="bg-white rounded-lg shadow-md p-6">
+            <div className="bg-white rounded-lg shadow-md p-4">
               <h4 className="text-lg font-semibold mb-4 text-gray-700">
                 Your Schedule
               </h4>
