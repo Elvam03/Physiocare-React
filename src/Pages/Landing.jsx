@@ -131,7 +131,12 @@ const Landing = () => {
             <main id="home">
                 <div
                     className="h-screen bg-fixed bg-center bg-cover"
-                    style={{ backgroundImage: "url('/Images/four.jpg')" }}
+                    style={{
+                        backgroundImage: "url('/Images/four.jpg')",
+                        backgroundAttachment: "fixed",
+                        backgroundPosition: "center",
+                        backgroundSize: "cover",
+                    }}
                 >
                     <div className="flex items-center justify-center h-full bg-black bg-opacity-50">
                         <div className="text-center">

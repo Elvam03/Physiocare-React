@@ -12,6 +12,13 @@
     @apply h-9 w-9 m-2 border-gray-900 border-2 m-2 rounded-md p-1 cursor-pointer transition-transform duration-300 hover:bg-gray-200 hover:-translate-y-1 hover:shadow-md hover:shadow-gray-400;
 }
 
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+
 /* Book container */
 .book-container {
     display: flex;
