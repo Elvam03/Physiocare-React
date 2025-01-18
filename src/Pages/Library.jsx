@@ -46,7 +46,7 @@ const Library = () => {
   );
 
   return (
-    <div>
+    <div className="bg-gray-100 min-h-screen">
       {/* Navbar */}
       <div className="sticky top-0 z-20">
         <Navbar />
@@ -56,7 +56,7 @@ const Library = () => {
         <Sidebar />
       </div>
 
-      <div className="p-6 min-h-screen bg-gray-100 text-black">
+      <div className="p-6 text-black">
         {/* Search Input */}
         <div className="flex justify-between items-center mb-6">
           <input

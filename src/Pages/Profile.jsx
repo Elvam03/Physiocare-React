@@ -49,7 +49,7 @@ const Profile = () => {
   };
 
   return (
-    <div className="h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-100">
       {/* Navbar */}
       <div className="sticky top-0 z-20">
         <Navbar />

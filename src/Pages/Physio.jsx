@@ -4,6 +4,8 @@ import Navbar from "../Properties/Navbar";
 import "react-calendar/dist/Calendar.css";
 import Calendar from "react-calendar";
 import { Link, useLocation } from "react-router-dom";
+import Footer from "../Properties/Footer";
+
 
 
 const Physio = () => {
@@ -138,7 +140,7 @@ const Physio = () => {
         : [];
 
     return (
-        <div className="bg-gray-100">
+        <div className="bg-gray-100 min-h-screen">
             <div className="sticky top-0 z-20">
                 <Navbar />
             </div>
@@ -273,6 +275,10 @@ const Physio = () => {
                             : "Please select a specialty to see physiotherapists."}
                     </p>
                 )}
+            </div>
+
+            <div>
+                <Footer/>
             </div>
         </div>
     );

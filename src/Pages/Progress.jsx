@@ -38,7 +38,7 @@ const Progress = () => {
     };
 
     return (
-        <div className="">
+        <div className="bg-gray-100 min-h-screen">
             <div className="sticky top-0 z-20">
                 <Navbar />
 

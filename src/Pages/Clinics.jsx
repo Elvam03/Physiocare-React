@@ -4,6 +4,7 @@ import Navbar from "../Properties/Navbar";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Footer from "../Properties/Footer";
 
 const Clinics = () => {
     const [searchTerm, setSearchTerm] = useState("");
@@ -67,7 +68,7 @@ const Clinics = () => {
     };
 
     return (
-        <div>
+        <div className="bg-gray-100 min-h-screen">
             <div className="sticky top-0 z-20">
                 <Navbar />
             </div>
@@ -75,7 +76,7 @@ const Clinics = () => {
                 <Sidebar />
             </div>
 
-            <div className="bg-gray-100 min-h-screen">
+            <div className="">
                 <div className="container mx-auto p-4 bg-gray-100 min-h-screen">
                     {/* Advertisements Section */}
                     <div className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-2xl mx-auto mb-10 mt-5">
@@ -157,6 +158,12 @@ const Clinics = () => {
                     )}
                 </div>
             </div>
+
+            <div>
+                <Footer/>
+            </div>
+
+           
         </div>
     );
 };

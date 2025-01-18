@@ -41,7 +41,7 @@ const Community = () => {
 
 
     return (
-        <div className="bg-gray-100 h-screen">
+        <div className="bg-gray-100 min-h-screen">
              <div className="sticky top-0 z-20">
                 <Navbar/>
 

@@ -27,7 +27,7 @@ const SettingItem = ({ title, subtitle, image, link }) => (
 
 const Settings = () => {
     return (
-        <div className="bg-gray-100 h-full">
+        <div className="bg-gray-100 min-h-screen">
             <div className="sticky top-0 z-20">
                 <Navbar />
             </div>
