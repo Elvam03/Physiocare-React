@@ -3,29 +3,30 @@ import Sidebar from "../Properties/Sidebar";
 import Navbar from "../Properties/Navbar";
 import { Link } from "react-router-dom";
 
-const settingsData = [
-    { title: "Name", subtitle: "Number", image: "#", link: "#" },
-    { title: "Account", subtitle: "Log Out, Info, Delete Account", link: "#" },
-    { title: "Chats", subtitle: "Theme, Wallpaper", link: "#" },
-    { title: "Privacy", subtitle: "Profile", link: "#" },
-    { title: "Notifications", subtitle: "Email", link: "#" },
-    { title: "Payments", subtitle: "Subscriptions", link: "#" },
-    { title: "Help", subtitle: "Help Center, Contact Us, Policy", link: "#" },
-];
 
-const SettingItem = ({ title, subtitle, image, link }) => (
-    <Link to={link}>
-        <div className="py-5 m-2 flex gap-4 hover:bg-gray-50 items-center px-4 rounded-lg transition duration-300 ease-in-out">
-            {image && <img src={image} alt="Avatar" className="h-12 w-12 rounded-full" />}
-            <div className="flex flex-col justify-center">
-                <p className="font-semibold text-gray-800">{title}</p>
-                <p className="text-sm text-gray-600">{subtitle}</p>
-            </div>
-        </div>
-    </Link>
-);
 
 const Settings = () => {
+    const settingsData = [
+        { title: "Name", subtitle: "Number", image: "#", link: "#" },
+        { title: "Account", subtitle: "Log Out, Info, Delete Account", link: "#" },
+        { title: "Chats", subtitle: "Theme, Wallpaper", link: "#" },
+        { title: "Privacy", subtitle: "Profile", link: "#" },
+        { title: "Notifications", subtitle: "Email", link: "#" },
+        { title: "Payments", subtitle: "Subscriptions", link: "#" },
+        { title: "Help", subtitle: "Help Center, Contact Us, Policy", link: "#" },
+    ];
+    
+    const SettingItem = ({ title, subtitle, image, link }) => (
+        <Link to={link}>
+            <div className="py-5 m-2 flex gap-4 hover:bg-gray-50 items-center px-4 rounded-lg transition duration-300 ease-in-out">
+                {image && <img src={image} alt="Avatar" className="h-12 w-12 rounded-full" />}
+                <div className="flex flex-col justify-center">
+                    <p className="font-semibold text-gray-800">{title}</p>
+                    <p className="text-sm text-gray-600">{subtitle}</p>
+                </div>
+            </div>
+        </Link>
+    );
     return (
         <div className="bg-gray-100 min-h-screen">
             <div className="sticky top-0 z-20">

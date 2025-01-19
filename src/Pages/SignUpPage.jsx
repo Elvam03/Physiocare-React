@@ -63,6 +63,18 @@ const SignUpPage = () => {
         </div>
       </div>
 
+      <div className="mt-2 text-center mb-3 text-white">
+            Already have an account?{" "}
+            <Link
+                to="/login"
+                className="text-orange-200 hover:underline"
+              >
+                Log In
+              </Link>
+            
+            
+          </div>
+
       {/* Client Form */}
       {showForm === "client" && (
         <section
