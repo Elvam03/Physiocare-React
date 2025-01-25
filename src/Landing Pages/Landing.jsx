@@ -102,7 +102,7 @@ const Landing = () => {
                             >
                                 Sign Up
                             </Link>
-                            
+
                         </div>
 
                         {/*Mobile bugger section */}
@@ -133,7 +133,7 @@ const Landing = () => {
             {/* Main Content */}
             <main id="home">
                 <div
-                    className="h-screen md:bg-fixed bg-center bg-cover"
+                    className="h-screen bg-fixed bg-center bg-cover"
                     style={{ backgroundImage: "url('/Images/landing img.jpg')" }}
                 >
                     <div className="flex items-center justify-center h-full bg-black bg-opacity-50">
@@ -163,7 +163,6 @@ const Landing = () => {
                 </div>
             </main>
 
-
             {/* About Section */}
             <section id="about" className="py-16 px-4 bg-white">
                 <div className="flex flex-col md:flex-row">
@@ -187,7 +186,7 @@ const Landing = () => {
                         </div>
                     </div>
                     <div className="hidden md:block w-px bg-gray-300 mx-4"></div>
-                    <div className="md:w-1/2 px-8 py-4 text-center">
+                    <div className="md:w-1/2 px-8 py-4 text-center hidden md:block">
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-900 mb-8">
                             Our Mission
                         </h2>
@@ -209,6 +208,26 @@ const Landing = () => {
                 </div>
             </section>
 
+            {/* Parallax Image Section */}
+            <section
+                className="h-screen bg-fixed bg-center bg-cover"
+                style={{ backgroundImage: "url('/Images/landing img.jpg')" }}
+            >
+                <div className="h-full bg-black bg-opacity-40 flex items-center justify-center">
+                    <h2 className="text-4xl md:text-5xl text-white font-bold text-center">
+                        Bridging the Gap in Physiotherapy
+                    </h2>
+                </div>
+            </section>
+
+             {/* Resources Section */}
+             <section id="resources" className="my-4 py-6">
+                <div>
+                    <ResourceCenter />
+
+                </div>
+            </section>
+
             {/* Features Section */}
             <section id="features" className="bg-gray-100 py-6 px-4 text-center my-4">
                 <h1 className="text-4xl font-bold text-blue-900 my-8">Features</h1>
@@ -223,32 +242,26 @@ const Landing = () => {
 
             </section>
 
-            {/* Resources Section */}
-            <section id="resources" className="my-4 py-6">
-                <div>
-                    <ResourceCenter />
+           
 
-                </div>
-            </section>
+            {/*Physio */}
+            <section id="therapists" className="my-4 py-6">
 
-             {/*Physio */}
-             <section id="therapists" className="my-4 py-6">
-                
                 <div>
-                    <PhysioSection/>
+                    <PhysioSection />
                 </div>
             </section>
 
 
             {/*Facilities */}
             <section id="facilities">
-                
+
                 <div>
-                    <FacilitySection/>
+                    <FacilitySection />
                 </div>
             </section>
 
-            
+
             {/* Community Section */}
             <div className="" id="community" >
                 <CommunitySection />

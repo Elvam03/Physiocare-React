@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
+
 
 const ResourceCenter = () => {
   const [activeTab, setActiveTab] = useState('news');
@@ -37,21 +39,21 @@ const ResourceCenter = () => {
     <div className="resource-center my-9">
       <h2 className="text-3xl font-bold text-blue-900 mb-4 text-center mt-5">Resource Center</h2>
       <p className="text-gray-400 max-w-lg mx-auto mb-3 text-center p-3">
-                    Find articles and guides about physiotherapy, common conditions, and recovery tips.
-                </p>
+        Find articles and guides about physiotherapy, common conditions, and recovery tips.
+      </p>
       <div className="flex justify-center gap-14 p-2 mb-6">
         <button
-          className={`tab-button mr-5 ${ activeTab === "news"
-          ? "border-b-4 border-blue-500 font-semibold text-blue-600"
-          : "text-gray-600"}`}
+          className={`tab-button mr-5 ${activeTab === "news"
+            ? "border-b-4 border-blue-500 font-semibold text-blue-600"
+            : "text-gray-600"}`}
           onClick={() => setActiveTab('news')}
         >
           News & Blog
         </button>
         <button
           className={`tab-button ${activeTab === "articles"
-          ? "border-b-4 border-blue-500 font-semibold text-blue-600"
-          : "text-gray-600"}`}
+            ? "border-b-4 border-blue-500 font-semibold text-blue-600"
+            : "text-gray-600"}`}
           onClick={() => setActiveTab('articles')}
         >
           Articles
@@ -85,7 +87,13 @@ const ResourceCenter = () => {
       </div>
 
       <div className='flex justify-center items-center my-8'>
-        <button className='bg-teal-500 rounded-md hover-bg-teal-600 text-white p-3 font-semibold'>Go to Page</button>
+        
+          <Link
+            to="/resourcePage"
+            className="bg-teal-500 rounded-md hover-bg-teal-600 text-white p-3 font-semibold"
+          >
+            Go to Page
+          </Link>
       </div>
 
     </div>

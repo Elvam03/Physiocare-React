@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Landing from './Landing Pages/Landing.jsx';
+import ResourcePage from './Landing Pages/ResourcePage.jsx';
 import LogInPage from './Landing Pages/LogInPage.jsx';
 import SignUpPage from './Landing Pages/SignUpPage.jsx';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -62,16 +63,7 @@ function App() {
          <Route path="/physioLibrary" element={<PhysioLibrary />} />
          <Route path="/physioCommunity" element={<PhysioCommunity />} />
          <Route path="/physioSettings" element={<PhysioSettings />} />
-
-
-
-
-
-
-
-
-
-
+         <Route path="/resourcePage" element={<ResourcePage />} />
 
 
 

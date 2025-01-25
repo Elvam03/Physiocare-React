@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css"; // Import Swiper styles
-import "swiper/css/navigation"; // Optional: For navigation buttons
-import "swiper/css/pagination"; // Optional: For pagination
+import "swiper/css"; 
+import "swiper/css/navigation"; 
+import "swiper/css/pagination"; 
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Link } from "react-router-dom";
 
@@ -54,9 +54,6 @@ const Services = () => {
     },
   ];
 
-
-
-
   return (
     <section className="relative bg-gray-100 text-white my-5">
       <Swiper
@@ -101,6 +98,7 @@ const Services = () => {
         ))}
 
       </Swiper>
+      
     </section>
   );
 };

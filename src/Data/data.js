@@ -4,6 +4,11 @@ export const NavbarMenu = [
         title: "Home",
         link: "/"
     },
+    {
+        id: "about",
+        title: "About",
+        link: "#about"
+    }, 
     
     {
         id: "features",
@@ -15,11 +20,7 @@ export const NavbarMenu = [
         title: "Resources",
         link: "#resources"
     }, 
-    {
-        id: "therapists",
-        title: "Therapists",
-        link: "#therapists"
-    }, 
+    
     {
         id: "facilities",
         title: "Facilities",

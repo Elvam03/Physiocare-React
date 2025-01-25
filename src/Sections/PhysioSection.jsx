@@ -7,19 +7,19 @@ const PhysioSection = () => {
             name: "John Doe",
             location: "Nairobi",
             bio: "Specializes in sports injuries and rehabilitation.",
-            image: "https://via.placeholder.com/150",
+            image: "/Images/physio2.jpg",
         },
         {
             name: "Jane Smith",
             location: "Kisumu",
             bio: "Expert in post-surgery rehabilitation.",
-            image: "https://via.placeholder.com/150",
+            image: "",
         },
         {
             name: "Emily Brown",
             location: "Nakuru",
             bio: "Focuses on athletic performance and recovery.",
-            image: "https://via.placeholder.com/150",
+            image: "",
         },
     ];
 
@@ -27,37 +27,44 @@ const PhysioSection = () => {
         <div className="bg-gray-100 py-12">
             <div className="container mx-auto px-6">
                 <h2 className="text-3xl font-bold text-center text-blue-900 mb-8">
-                    Our Physiotherapists
+                    Our Therapists
                 </h2>
                 <p className="text-center text-gray-600 mb-8">
-                    Meet our top-rated physiotherapists, ready to provide you with the best care!
+                    Discover the experts who can help you achieve your health and wellness goals.
                 </p>
-                
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                     {physiotherapists.map((physio, index) => (
                         <div
                             key={index}
-                            className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition"
+                            className="bg-white rounded-lg shadow hover:shadow-lg transition flex flex-col md:flex-row"
                         >
-                            <img
-                                src={physio.image}
-                                alt={physio.name}
-                                className="w-24 h-24 rounded-full mx-auto mb-4"
-                            />
-                            <h3 className="text-xl font-semibold text-center mb-2">
-                                {physio.name}
-                            </h3>
-                            <p className="text-center text-gray-600 mb-4">{physio.location}</p>
-                            <p className="text-center text-gray-500 mb-4">{physio.bio}</p>
-                            
-                            {/* Sign Up Link */}
-                            <div className="text-center mt-4">
-                                <Link
-                                    to="/signup"
-                                    className="text-blue-500 hover:underline transition"
-                                >
-                                    Book
-                                </Link>
+                            {/* Image Section */}
+                            <div className="md:w-1/3">
+                                <img
+                                    src={physio.image || "/placeholder.jpg"}
+                                    alt={physio.name}
+                                    className="w-full h-full object-cover rounded-t-lg md:rounded-l-lg md:rounded-tr-none"
+                                />
+                            </div>
+
+                            {/* Details Section */}
+                            <div className="p-6 md:w-2/3 flex flex-col justify-center">
+                                <h3 className="text-xl font-semibold text-blue-900 mb-2">
+                                    {physio.name}
+                                </h3>
+                                <p className="text-gray-600 mb-2">{physio.location}</p>
+                                <p className="text-gray-500 mb-4">{physio.bio}</p>
+
+                                {/* Call-to-Action */}
+                                <div className="mt-4">
+                                    <Link
+                                        to="/login"
+                                        className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition inline-block"
+                                    >
+                                        Book Now
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                     ))}
