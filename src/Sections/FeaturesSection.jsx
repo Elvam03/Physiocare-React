@@ -58,10 +58,10 @@ const Services = () => {
 
 
   return (
-    <section className="relative bg-gray-200 text-white">
+    <section className="relative bg-gray-100 text-white my-5">
       <Swiper
         modules={[Autoplay, Navigation, Pagination]}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        autoplay={{ delay: 6000, disableOnInteraction: false }}
         navigation
         pagination={{ clickable: true }}
         loop={true}

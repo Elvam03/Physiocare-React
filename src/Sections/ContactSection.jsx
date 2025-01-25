@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 
 const ContactSection = () => {
   return (
@@ -84,7 +86,48 @@ const ContactSection = () => {
         </form>
       </div>
 
-     
+      {/* Horizontal Line */}
+      <div className="h-px bg-white my-10 mx-auto w-full"></div>
+
+      <div className="grid grid-cols-4">
+        <div className=" col-span-2 flex justify-center">
+          {/* Join the Team Section */}
+          <div>
+            <h3 className="text-xl font-semibold mb-4">Join Our Team</h3>
+            <ul>
+              <li>
+                <Link to="/join-clinics" className="hover:text-gray-400">Clinics</Link>
+              </li>
+              <li>
+                <Link to="/join-therapists" className="hover:text-gray-400">Therapists</Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Advertise with Us Section */}
+        <div className="col-span-2 flex flex-col justify-center items-center">
+          <h3 className="text-xl font-semibold mb-4">Advertise with Us</h3>
+          <ul>
+            <li>
+              <Link to="/advertise" className="hover:text-gray-400">Advertise Your Clinic</Link>
+            </li>
+            <li>
+              <Link to="/advertise" className="hover:text-gray-400">Advertise as Physio</Link>
+            </li>
+            <li>
+              <Link to="/build-a-website" className="hover:text-gray-400">Build Your Website</Link>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+      {/* Footer Bottom Section */}
+      <div className="bg-gray-900 text-center py-4 mt-8">
+        <p className="text-sm text-gray-400">© 2025 P.C.N. All rights reserved.</p>
+      </div>
+
     </section>
   );
 };

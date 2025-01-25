@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Sidebar from "../Properties/Sidebar";
 import Navbar from "../Properties/Navbar";
-import Reports from "../Properties/Reports";
+import Reports from "../Sections/Reports";
 
 const Profile = () => {
   const [modalOpen, setModalOpen] = useState(false);

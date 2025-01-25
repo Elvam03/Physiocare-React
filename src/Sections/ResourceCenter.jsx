@@ -34,7 +34,7 @@ const ResourceCenter = () => {
   ];
 
   return (
-    <div className="resource-center">
+    <div className="resource-center my-9">
       <h2 className="text-3xl font-bold text-blue-900 mb-4 text-center mt-5">Resource Center</h2>
       <p className="text-gray-400 max-w-lg mx-auto mb-3 text-center p-3">
                     Find articles and guides about physiotherapy, common conditions, and recovery tips.
@@ -84,8 +84,8 @@ const ResourceCenter = () => {
         )}
       </div>
 
-      <div className='flex justify-center items-center my-5'>
-        <button className='bg-teal-500 rounded-md hover-bg-teal-600 text-white p-3 font-semibold'>Get More</button>
+      <div className='flex justify-center items-center my-8'>
+        <button className='bg-teal-500 rounded-md hover-bg-teal-600 text-white p-3 font-semibold'>Go to Page</button>
       </div>
 
     </div>

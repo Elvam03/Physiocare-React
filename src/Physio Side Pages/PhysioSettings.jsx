@@ -1,6 +1,5 @@
 import PhysioSidebar from "../Properties/PhysioSidebar";
 import Navbar from "../Properties/Navbar";
-import Settings from "../Pages/Settings";
 import React from "react";
 import { Link } from "react-router-dom";
 

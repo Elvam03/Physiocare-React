@@ -98,7 +98,7 @@ const SocialProof = () => {
         {/* Right: Social Media Feed */}
         <div className="md:w-1/2 bg-white shadow-lg p-6 rounded-lg">
           <h3 className="text-xl font-bold text-blue-900 mb-4 text-center">
-            Follow Us on Social Media
+            Find Us on Social Media
           </h3>
           <div className="flex flex-col ">
             <div className="flex justify-center gap-3">

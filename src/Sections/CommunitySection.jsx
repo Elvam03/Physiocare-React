@@ -1,11 +1,11 @@
 import React from "react";
 
-const Community = () => {
+const CommunitySection = () => {
   return (
     <section>
-      <div className="bg-gray-100 mt-3">
+      <div className="bg-gray-100 mt-3 py-8">
         <h2 className="text-3xl font-bold text-blue-900 text-center p-4">
-          Our Community
+          Community Support Center
         </h2>
         <p className="text-gray-400 max-w-lg mx-auto mb-3 text-center p-3">
           Access our forum, give feedback, and browse the frequently asked questions.
@@ -103,4 +103,4 @@ const Community = () => {
   );
 };
 
-export default Community;
+export default CommunitySection;

@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { NavbarMenu } from '../Data/data'
 import ResponsiveMenu from '../Properties/ResponsiveMenu';
-import Services from "../Properties/ServicesSection";
-import ResourceCenter from "../Properties/ResourceCenter";
-import Community from "../Properties/CommunitySection";
-import SocialProof from "../Properties/SocialProof";
-import ContactSection from "../Properties/ContactSection";
+import Features from "../Sections/FeaturesSection";
+import ResourceCenter from "../Sections/ResourceCenter";
+import CommunitySection from "../Sections/CommunitySection";
+import SocialProof from "../Sections/SocialProof";
+import ContactSection from "../Sections/ContactSection";
 import { Link } from "react-router-dom";
+import FacilitySection from "../Sections/FacilitySection";
+import PhysioSection from "../Sections/PhysioSection";
+
 
 
 
@@ -207,30 +210,48 @@ const Landing = () => {
             </section>
 
             {/* Services Section */}
-            <section id="services" className="bg-gray-100 py-6 px-4 text-center">
-                <h1 className="text-4xl font-bold text-blue-900 mb-4">Services</h1>
+            <section id="features" className="bg-gray-100 py-6 px-4 text-center my-4">
+                <h1 className="text-4xl font-bold text-blue-900 my-8">Features</h1>
                 <p className="text-gray-400 max-w-lg mx-auto">
                     Create an account and expolore various features.
                 </p>
                 {/* Services cards */}
 
                 <div className="mt-4">
-                    <Services />
+                    <Features />
                 </div>
 
             </section>
 
             {/* Resources Section */}
-            <section id="resources">
+            <section id="resources" className="my-4 py-6 px-4">
                 <div>
                     <ResourceCenter />
 
                 </div>
             </section>
 
+             {/*Physio */}
+             <section id="therapists" className="my-4 py-6 px-4">
+                
+                <div>
+                    <PhysioSection/>
+                </div>
+            </section>
+
+
+            {/*Facilities */}
+            <section id="facilities">
+                
+                <div>
+                    <FacilitySection/>
+                </div>
+            </section>
+
+            
             {/* Community Section */}
-            <div className="mt-4" id="community">
-                <Community />
+            <div className=" px-4" id="community" >
+                <CommunitySection />
 
             </div>
 

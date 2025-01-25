@@ -1,30 +1,30 @@
 import { useState } from 'react'
-import Landing from './Pages/Landing.jsx';
-import LogInPage from './Pages/LogInPage.jsx';
-import SignUpPage from './Pages/SignUpPage.jsx';
+import Landing from './Landing Pages/Landing.jsx';
+import LogInPage from './Landing Pages/LogInPage.jsx';
+import SignUpPage from './Landing Pages/SignUpPage.jsx';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Dashboard from './Pages/Dashboard.jsx';
-import Profile from './Pages/Profile.jsx';
-import Appointments from "./Pages/Appointments.jsx";
-import Physio from './Pages/Physio.jsx';
-import Chat from './Pages/Chat.jsx';
-import Progress from './Pages/Progress.jsx';
-import Consultations from './Pages/Consultations.jsx';
-import Library from './Pages/Library.jsx';
-import Community from './Pages/Community.jsx';
-import Clinics from './Pages/Clinics.jsx';
-import Settings from './Pages/Settings.jsx';
-import PhysioDashboard from './Pages/PhysioDashboard.jsx';
-import OnboardingPage from './Pages/OnboardingPage.jsx';
-import PhysioAppointments from './Pages/PhysioAppointments.jsx';
-import Patient from './Pages/Patient.jsx';
-import PhysioChats from './Pages/PhysioChats.jsx';
-import PhysioConsultations from './Pages/PhysioConsultations.jsx';
-import PhysioClinics from './Pages/PhysioClinics.jsx';
-import Physiotherapist from './Pages/Physiotherapist.jsx';
-import PhysioLibrary from './Pages/PhysioLibrary.jsx';
-import PhysioCommunity from './Pages/PhysioCommunity.jsx';
-import PhysioSettings from './Pages/PhysioSettings.jsx';
+import Dashboard from './Client Side Pages/Dashboard.jsx';
+import Profile from './Client Side Pages/Profile.jsx';
+import Appointments from "./Client Side Pages/Appointments.jsx";
+import Physio from './Client Side Pages/Physio.jsx';
+import Chat from './Client Side Pages/Chat.jsx';
+import Progress from './Client Side Pages/Progress.jsx';
+import Consultations from './Client Side Pages/Consultations.jsx';
+import Library from './Client Side Pages/Library.jsx';
+import Community from './Client Side Pages/Community.jsx';
+import Clinics from './Client Side Pages/Clinics.jsx';
+import Settings from './Client Side Pages/Settings.jsx';
+import PhysioDashboard from './Physio Side Pages/PhysioDashboard.jsx';
+import OnboardingPage from './Landing Pages/OnboardingPage.jsx';
+import PhysioAppointments from './Physio Side Pages/PhysioAppointments.jsx';
+import Patient from './Physio Side Pages/Patient.jsx';
+import PhysioChats from './Physio Side Pages/PhysioChats.jsx';
+import PhysioConsultations from './Physio Side Pages/PhysioConsultations.jsx';
+import PhysioClinics from './Physio Side Pages/PhysioClinics.jsx';
+import Physiotherapist from './Physio Side Pages/Physiotherapist.jsx';
+import PhysioLibrary from './Physio Side Pages/PhysioLibrary.jsx';
+import PhysioCommunity from './Physio Side Pages/PhysioCommunity.jsx';
+import PhysioSettings from './Physio Side Pages/PhysioSettings.jsx';
 
 
 

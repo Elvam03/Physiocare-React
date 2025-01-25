@@ -1,6 +1,5 @@
 import PhysioSidebar from "../Properties/PhysioSidebar";
 import Navbar from "../Properties/Navbar";
-import Physio from "../Pages/Physio"
 import React, { useState } from "react";
 import "react-calendar/dist/Calendar.css";
 import Calendar from "react-calendar";

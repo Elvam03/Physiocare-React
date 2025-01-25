@@ -40,9 +40,10 @@ const ResponsiveMenu = ({ open, setOpen }) => {
             <ul className="flex flex-col justify-center items-center gap-5">
               {[
                 "Home",
-                "About",
-                "Services",
+                "Features",
                 "Resources",
+                "Therapists",
+                "Facilities",
                 "Community",
                 "Contact",
               ].map((item, index) => (

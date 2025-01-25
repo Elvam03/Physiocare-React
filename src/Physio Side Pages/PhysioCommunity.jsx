@@ -1,6 +1,5 @@
 import PhysioSidebar from "../Properties/PhysioSidebar";
 import Navbar from "../Properties/Navbar";
-import Community from "../Pages/Community";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 

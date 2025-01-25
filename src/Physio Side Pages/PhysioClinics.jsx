@@ -1,6 +1,5 @@
 import PhysioSidebar from "../Properties/PhysioSidebar";
 import Navbar from "../Properties/Navbar";
-import Clinics from "../Pages/Clinics"
 import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
