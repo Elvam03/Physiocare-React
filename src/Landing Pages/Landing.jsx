@@ -73,7 +73,7 @@ const Landing = () => {
                                 {
                                     NavbarMenu.map((item) => {
                                         return (
-                                            <li key={item.id} className='p-4 lg:p-7 hover:bg-white hover:text-gray-800 transition ease-out duration-500'>
+                                            <li key={item.id} className='p-4 ipad-pro:p-4 lg:p-7 hover:bg-white hover:text-gray-800 transition ease-out duration-500'>
                                                 <a href={item.link}>{item.title}</a>
 
                                             </li>
@@ -209,7 +209,7 @@ const Landing = () => {
                 </div>
             </section>
 
-            {/* Services Section */}
+            {/* Features Section */}
             <section id="features" className="bg-gray-100 py-6 px-4 text-center my-4">
                 <h1 className="text-4xl font-bold text-blue-900 my-8">Features</h1>
                 <p className="text-gray-400 max-w-lg mx-auto">
@@ -224,7 +224,7 @@ const Landing = () => {
             </section>
 
             {/* Resources Section */}
-            <section id="resources" className="my-4 py-6 px-4">
+            <section id="resources" className="my-4 py-6">
                 <div>
                     <ResourceCenter />
 
@@ -232,7 +232,7 @@ const Landing = () => {
             </section>
 
              {/*Physio */}
-             <section id="therapists" className="my-4 py-6 px-4">
+             <section id="therapists" className="my-4 py-6">
                 
                 <div>
                     <PhysioSection/>
@@ -250,7 +250,7 @@ const Landing = () => {
 
             
             {/* Community Section */}
-            <div className=" px-4" id="community" >
+            <div className="" id="community" >
                 <CommunitySection />
 
             </div>

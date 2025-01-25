@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        'ipad-pro': { min: '834px', max: '1024px' }, // iPad Pro
+      },
       
     },
   },
