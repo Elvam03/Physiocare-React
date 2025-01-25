@@ -49,20 +49,20 @@ const PhysioSection = () => {
                             </h3>
                             <p className="text-center text-gray-600 mb-4">{physio.location}</p>
                             <p className="text-center text-gray-500 mb-4">{physio.bio}</p>
+                            
+                            {/* Sign Up Link */}
+                            <div className="text-center mt-4">
+                                <Link
+                                    to="/signup"
+                                    className="text-blue-500 hover:underline transition"
+                                >
+                                    Book
+                                </Link>
+                            </div>
                         </div>
                     ))}
                 </div>
-                {/* Login Button */}
-               
             </div>
-            <div className="text-center my-8">
-                    <Link
-                        to="/login"
-                        className=" text-blue-500 hover:underline transition"
-                    >
-                        Log In or Sign Up
-                    </Link>
-                </div>
         </div>
     );
 };
