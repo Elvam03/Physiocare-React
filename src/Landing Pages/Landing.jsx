@@ -63,7 +63,7 @@ const Landing = () => {
             <div className='overflow-x-hidden lg:overflow-y-hidden text-white mt-4 sticky top-0 z-20'>
                 <nav className='bg-gradient-to-l from-teal-500 to-blue-900'>
                     <div className='container grid grid-cols-2 lg:grid-cols-9 items-center'>
-                        <div className="flex lg:items-center text-4xl m-5 font-bold tracking-wider">
+                        <div className="flex lg:items-center ipad-pro:text-2xl text-3xl m-4 font-bold tracking-wider">
                             <h3>P.C.N</h3>
                         </div>
 
@@ -73,7 +73,7 @@ const Landing = () => {
                                 {
                                     NavbarMenu.map((item) => {
                                         return (
-                                            <li key={item.id} className='p-4 ipad-pro:p-4 lg:p-7 hover:bg-white hover:text-gray-800 transition ease-out duration-500'>
+                                            <li key={item.id} className='p-4 ipad-pro:px-3 lg:p-7 hover:bg-white hover:text-gray-800 transition ease-out duration-500'>
                                                 <a href={item.link}>{item.title}</a>
 
                                             </li>
@@ -88,7 +88,7 @@ const Landing = () => {
                         {/*SignIn section */}
                         <div
 
-                            className={`lg:col-span-2 lg:flex justify-end lg:items-center  absolute top-0 right-5 py-5 hidden lg:block`}
+                            className={`lg:col-span-2 lg:flex justify-end lg:items-center absolute top-0 right-5 py-5 hidden lg:block`}
                         >
                             <Link
                                 to="/login"
