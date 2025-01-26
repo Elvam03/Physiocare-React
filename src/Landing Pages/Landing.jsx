@@ -9,6 +9,8 @@ import ContactSection from "../Sections/ContactSection";
 import { Link } from "react-router-dom";
 import FacilitySection from "../Sections/FacilitySection";
 import PhysioSection from "../Sections/PhysioSection";
+import { motion } from "framer-motion";
+
 
 
 
@@ -133,7 +135,7 @@ const Landing = () => {
             {/* Main Content */}
             <main id="home">
                 <div
-                    className="h-screen bg-fixed bg-cover"
+                    className="h-screen bg-scroll md:bg-fixed bg-cover bg-center"
                     style={{ backgroundImage: "url('/Images/landing img.jpg')" }}
                 >
                     <div className="flex items-center justify-center h-full bg-black bg-opacity-50">
@@ -186,7 +188,7 @@ const Landing = () => {
                         </div>
                     </div>
                     <div className="hidden md:block w-px bg-gray-300 mx-4"></div>
-                    <div className="md:w-1/2 px-8 py-4 text-center hidden md:block">
+                    <div className="md:w-1/2 px-8 py-4 text-center">
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-900 mb-8">
                             Our Mission
                         </h2>
@@ -208,20 +210,32 @@ const Landing = () => {
                 </div>
             </section>
 
+            {/*Plain screen for mobile phones */}
+            <section className="h-screen md:hidden bg-fixed bg-gray-500 bg-center">
+            <div className="h-full bg-black bg-opacity-40 flex items-center justify-center">
+                    <h2 className="text-4xl md:text-5xl text-white font-bold text-center">
+                        "The human body is the best work of art, and through physiotherapy, we help restore its masterpiece."
+                    </h2>
+                </div>
+
+            </section>
+
+
+            
             {/* Parallax Image Section */}
             <section
-                className="h-screen bg-fixed bg-cover"
+                className="h-screen hidden md:block bg-fixed bg-cover bg-center"
                 style={{ backgroundImage: "url('/Images/landing img.jpg')" }}
             >
                 <div className="h-full bg-black bg-opacity-40 flex items-center justify-center">
                     <h2 className="text-4xl md:text-5xl text-white font-bold text-center">
-                        Bridging the Gap in Physiotherapy
+                        "The human body is the best work of art, and through physiotherapy, we help restore its masterpiece."
                     </h2>
                 </div>
             </section>
 
-             {/* Resources Section */}
-             <section id="resources" className="my-4 py-6">
+            {/* Resources Section */}
+            <section id="resources" className="my-4 py-6">
                 <div>
                     <ResourceCenter />
 
@@ -242,7 +256,7 @@ const Landing = () => {
 
             </section>
 
-           
+
 
             {/*Physio */}
             <section id="therapists" className="my-4 py-6">
