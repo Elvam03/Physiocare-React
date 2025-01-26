@@ -133,7 +133,7 @@ const Landing = () => {
             {/* Main Content */}
             <main id="home">
                 <div
-                    className="h-[75vh] bg-fixed bg-center md:bg-cover"
+                    className="h-screen bg-fixed bg-cover"
                     style={{ backgroundImage: "url('/Images/landing img.jpg')" }}
                 >
                     <div className="flex items-center justify-center h-full bg-black bg-opacity-50">
@@ -210,7 +210,7 @@ const Landing = () => {
 
             {/* Parallax Image Section */}
             <section
-                className="h-screen bg-fixed bg-center md:bg-cover"
+                className="h-screen bg-fixed bg-cover"
                 style={{ backgroundImage: "url('/Images/landing img.jpg')" }}
             >
                 <div className="h-full bg-black bg-opacity-40 flex items-center justify-center">
