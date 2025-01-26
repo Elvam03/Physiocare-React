@@ -8,8 +8,7 @@ import SocialProof from "../Sections/SocialProof";
 import ContactSection from "../Sections/ContactSection";
 import { Link } from "react-router-dom";
 import FacilitySection from "../Sections/FacilitySection";
-import PhysioSection from "../Sections/PhysioSection";
-import { motion } from "framer-motion";
+
 
 
 
@@ -166,7 +165,7 @@ const Landing = () => {
             </main>
 
             {/* About Section */}
-            <section id="about" className="py-16 px-4 bg-white">
+            <section id="about" className="py-10 px-4 bg-white">
                 <div className="flex flex-col md:flex-row">
                     <div className="md:w-1/2 px-8 py-4 text-center">
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-teal-500 mb-8">
@@ -210,40 +209,8 @@ const Landing = () => {
                 </div>
             </section>
 
-            {/*Plain screen for mobile phones */}
-            <section className="h-screen md:hidden bg-fixed bg-gray-500 bg-center">
-            <div className="h-full bg-black bg-opacity-40 flex items-center justify-center">
-                    <h2 className="text-4xl md:text-5xl text-white font-bold text-center">
-                        "The human body is the best work of art, and through physiotherapy, we help restore its masterpiece."
-                    </h2>
-                </div>
-
-            </section>
-
-
-            
-            {/* Parallax Image Section */}
-            <section
-                className="h-screen hidden md:block bg-fixed bg-cover bg-center"
-                style={{ backgroundImage: "url('/Images/landing img.jpg')" }}
-            >
-                <div className="h-full bg-black bg-opacity-40 flex items-center justify-center">
-                    <h2 className="text-4xl md:text-5xl text-white font-bold text-center">
-                        "The human body is the best work of art, and through physiotherapy, we help restore its masterpiece."
-                    </h2>
-                </div>
-            </section>
-
-            {/* Resources Section */}
-            <section id="resources" className="my-4 py-6">
-                <div>
-                    <ResourceCenter />
-
-                </div>
-            </section>
-
-            {/* Features Section */}
-            <section id="features" className="bg-gray-100 py-6 px-4 text-center my-4">
+         {/* Features Section */}
+         <section id="features" className="bg-gray-100 py-6 px-4 text-center my-4">
                 <h1 className="text-4xl font-bold text-blue-900 my-8">Features</h1>
                 <p className="text-gray-400 max-w-lg mx-auto">
                     Create an account and expolore various features.
@@ -255,16 +222,17 @@ const Landing = () => {
                 </div>
 
             </section>
+            
 
-
-
-            {/*Physio */}
-            <section id="therapists" className="my-4 py-6">
-
+            {/* Resources Section */}
+            <section id="resources" className="my-4 py-6">
                 <div>
-                    <PhysioSection />
+                    <ResourceCenter />
+
                 </div>
             </section>
+
+            
 
 
             {/*Facilities */}
