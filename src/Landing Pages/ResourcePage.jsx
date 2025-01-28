@@ -23,6 +23,34 @@ const ResourcePage = () => {
             timestamp: "2025-01-28T10:30:00",
 
         },
+        {
+            id: 3,
+            title: "Augmented Reality (AR) Applications",
+            description: "Physiotherapy and Tech",
+            content: "AR is being explored to assist patients with neurological conditions. A startup named Strolll has developed an AR program that projects virtual lines on the ground to guide patients with Parkinson's disease, helping them overcome mobility challenges. This technology also includes gamified rehabilitation exercises to enhance patient engagement. ",
+            timestamp: "2025-01-24T11:10:00",
+
+
+        },
+        {
+            id: 4,
+            title: "Wearable Technology",
+            description: "Technology devices used in fitness.",
+            content: "Wearable devices continue to gain popularity in physiotherapy. The American College of Sports Medicine identified wearable technology as the top fitness trend for 2025. These devices monitor various health metrics, providing data that can inform personalized treatment plans and track patient progress.",
+            timestamp: "2025-01-20T21:10:00",
+
+
+        },
+
+        {
+            id: 5,
+            title: "Telehealth Services",
+            description: "Digital world of physiotherapy",
+            content: "The adoption of telehealth in physiotherapy has expanded, providing patients with greater access to care. Virtual consultations and remote monitoring allow for flexible treatment options, especially beneficial for those with limited mobility or in remote areas.",
+            timestamp: "2025-01-15T19:50:00",
+
+
+        },
     ];
 
     const articles = [
