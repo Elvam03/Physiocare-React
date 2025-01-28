@@ -7,16 +7,19 @@ const ResourceCenter = () => {
 
   const newsAndBlog = [
     {
+      
       id: 1,
-      title: "5 Tips for Better Posture",
-      description: "Learn how to improve your posture and reduce back pain.",
-      link: "/blog/posture-tips",
+      title: "AI-Powered Physiotherapy in Scotland",
+      description: "Scotland has introduced 'Kirsty' an AI-powered virtual physiotherapist",
+      content: "Physiotherapy and AI",
+      link: "/resourcePage"
+
     },
     {
       id: 2,
-      title: "Latest Trends in Physiotherapy",
+      title: "Aquatic Therapy, a rising trend in Physical Therapy",
       description: "Discover what's new in the world of physiotherapy.",
-      link: "/blog/physio-trends",
+      link: "/resourcePage",
     },
   ];
 

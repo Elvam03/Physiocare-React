@@ -26,6 +26,7 @@ import Physiotherapist from './Physio Side Pages/Physiotherapist.jsx';
 import PhysioLibrary from './Physio Side Pages/PhysioLibrary.jsx';
 import PhysioCommunity from './Physio Side Pages/PhysioCommunity.jsx';
 import PhysioSettings from './Physio Side Pages/PhysioSettings.jsx';
+import AboutPage from './Landing Pages/AboutPage.jsx';
 
 
 
@@ -64,6 +65,8 @@ function App() {
          <Route path="/physioCommunity" element={<PhysioCommunity />} />
          <Route path="/physioSettings" element={<PhysioSettings />} />
          <Route path="/resourcePage" element={<ResourcePage />} />
+         <Route path="/aboutPage" element={<AboutPage />} />
+
 
 
 

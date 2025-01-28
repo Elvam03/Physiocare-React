@@ -103,5 +103,14 @@ body, html {
     overflow: hidden;
   }
   
- 
+ /* Hide scrollbar while keeping the scroll functionality */
+.hide-scrollbar {
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; 
+}
+
   

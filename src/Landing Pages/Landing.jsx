@@ -115,7 +115,7 @@ const Landing = () => {
 
                         >
                             <img
-                                src="/Images/burger.png"
+                                src="/Images/more.png"
                                 alt="burgerImage"
                                 className="w-7 h-7"
                             />
@@ -146,18 +146,20 @@ const Landing = () => {
                                 Connecting you to top physiotherapy resources
                             </h2>
                             <div className="mt-6 space-x-4">
-                                <a
-                                    href="#"
+                               
+                                <Link
+                                    to="/signup"
                                     className="inline-block py-3 px-6 bg-blue-900 text-white font-semibold rounded-full hover:bg-blue-700 hover:text-white transition-colors duration-300"
                                 >
                                     Get Started
-                                </a>
-                                <a
-                                    href="#"
+                                </Link>
+                                <Link
+                                    to="/aboutPage"
                                     className="inline-block py-3 px-6 py-2 border border-white text-white font-semibold rounded-full hover:bg-white hover:text-teal-700 transition-colors duration-300"
                                 >
                                     Learn More
-                                </a>
+                                </Link>
+                               
                             </div>
                         </div>
                     </div>
@@ -179,7 +181,7 @@ const Landing = () => {
                         </p>
                         <div className="m-7">
                             <a
-                                href="#"
+                                href="/aboutPage"
                                 className="bg-blue-900 text-white font-semibold rounded-md hover:bg-teal-500 hover:text-white transition-colors duration-300 p-3"
                             >
                                 Read More
@@ -199,7 +201,7 @@ const Landing = () => {
                         </p>
                         <div className="m-7">
                             <a
-                                href="#"
+                                href="/aboutPage"
                                 className="bg-teal-500 text-white font-semibold rounded-md hover:bg-blue-900 hover:text-white transition-colors duration-300 p-3"
                             >
                                 Read More
@@ -209,8 +211,8 @@ const Landing = () => {
                 </div>
             </section>
 
-         {/* Features Section */}
-         <section id="features" className="bg-gray-100 py-6 px-4 text-center my-4">
+            {/* Features Section */}
+            <section id="features" className="bg-gray-100 py-6 px-4 text-center my-4">
                 <h1 className="text-4xl font-bold text-blue-900 my-8">Features</h1>
                 <p className="text-gray-400 max-w-lg mx-auto">
                     Create an account and expolore various features.
@@ -222,7 +224,7 @@ const Landing = () => {
                 </div>
 
             </section>
-            
+
 
             {/* Resources Section */}
             <section id="resources" className="my-4 py-6">
@@ -232,7 +234,7 @@ const Landing = () => {
                 </div>
             </section>
 
-            
+
 
 
             {/*Facilities */}
