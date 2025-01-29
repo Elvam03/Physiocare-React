@@ -136,3 +136,8 @@ Currently, two official plugins are available:
                         </div>
                     )}
                 </div>
+
+
+                Developed by Flok Health, this service allows nearly a million people in the Lothians to book same-day appointments via a phone app, providing sessions and treatment exercises. Initial feedback from a pilot with NHS Lothian's occupational health service was overwhelmingly positive, leading to its regional expansion. Researchers will evaluate its effectiveness, potentially leading to more virtual NHS consultations nationwide
+
+                 Also known as hydrotherapy, this therapeutic technique offers a low-impact environment for rehabilitation. Aquatic therapy is recognized for its therapeutic benefits, such as reduced joint stress and enhanced flexibility, making it an attractive option for diverse patient populations. Clinicians incorporating aquatic therapy into their facilities will witness its efficacy in helping address musculoskeletal issues and promote patient well-being. As this trend continuously gains momentum, physical therapists should consider its potential to enhance patient outcomes and satisfaction.

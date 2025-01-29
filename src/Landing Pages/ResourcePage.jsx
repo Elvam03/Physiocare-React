@@ -1,113 +1,94 @@
 import React, { useState } from 'react';
 import Navbar from "../Properties/Navbar";
 import { Link } from "react-router-dom";
-import { FaThumbsUp, FaComment, FaShare } from 'react-icons/fa';
+import { FaEllipsisV } from 'react-icons/fa';
 
 const ResourcePage = () => {
     const [activeTab, setActiveTab] = useState('news');
     const [expandedCard, setExpandedCard] = useState(null);
     const [activeFilter, setActiveFilter] = useState('all');
-    const [likes, setLikes] = useState({});
-    const [comments, setComments] = useState({});
-    const [commentModal, setCommentModal] = useState(null);
-    const [commentInput, setCommentInput] = useState("");
-    const [commentList, setCommentList] = useState({});
+    const [menuOpen, setMenuOpen] = useState(null);
+    const [favorites, setFavorites] = useState([]);
+    const [successMessage, setSuccessMessage] = useState("");
 
     const newsAndBlog = [
         {
             id: 1,
             title: "AI-Powered Physiotherapy in Scotland",
             description: "Physiotherapy and AI",
-            content: "Scotland has introduced 'Kirsty' an AI-powered virtual physiotherapist, to address back pain and reduce NHS waiting times. Developed by Flok Health, this service allows nearly a million people in the Lothians to book same-day appointments via a phone app, providing sessions and treatment exercises. Initial feedback from a pilot with NHS Lothian's occupational health service was overwhelmingly positive, leading to its regional expansion. Researchers will evaluate its effectiveness, potentially leading to more virtual NHS consultations nationwide",
+            content: "Scotland has introduced 'Kirsty' an AI-powered virtual physiotherapist, to address back pain and reduce NHS waiting times.",
             timestamp: "2025-01-28T10:30:00",
         },
         {
             id: 2,
             title: "Aquatic Therapy, a rising trend in Physical Therapy",
             description: "Discover what's new in the world of physiotherapy.",
-            content: "The field is witnessing advancements in technology, including the adoption of aquatic therapy. Also known as hydrotherapy, this therapeutic technique offers a low-impact environment for rehabilitation. Aquatic therapy is recognized for its therapeutic benefits, such as reduced joint stress and enhanced flexibility, making it an attractive option for diverse patient populations. Clinicians incorporating aquatic therapy into their facilities will witness its efficacy in helping address musculoskeletal issues and promote patient well-being. As this trend continuously gains momentum, physical therapists should consider its potential to enhance patient outcomes and satisfaction.",
+            content: "The field is witnessing advancements in technology, including the adoption of aquatic therapy.",
             timestamp: "2025-01-28T10:30:00",
-
         },
-
     ];
 
     const articles = [
         {
             id: 1,
             title: "Understanding Chronic Pain",
-            description: "An in-depth look at the causes and treatments of chronic pain.",
-            content: "Chronic pain is typically defined as pain that lasts for longer than three months. It can occur in any part of the body and may range from mild to severe.   ",
+            description: "An in-depth look at chronic pain.",
             timestamp: "2025-01-28T10:30:00",
-
+            causes: "Chronic pain can be caused by past injuries, nerve damage, or underlying diseases.",
+            diagnosis: "Doctors use MRI, CT scans, and patient history to diagnose chronic pain.",
+            treatment: "Treatment includes medication, physical therapy, and lifestyle changes.",
+            exercise: "Stretching, yoga, and strength exercises help manage chronic pain."
         },
         {
             id: 2,
             title: "Benefits of Regular Exercise",
-            description: "Why staying active is essential for your health.",
-            content: "Regular exercise strengthens muscles, improves mental health, and reduces the risk of diseases like heart problems.",
+            description: "Why staying active is essential for health.",
             timestamp: "2025-01-28T10:30:00",
-
+            causes: "Lack of physical activity leads to weak muscles and poor circulation.",
+            diagnosis: "Sedentary lifestyle can be diagnosed through BMI, heart rate, and endurance tests.",
+            treatment: "Regular movement, proper nutrition, and medical supervision.",
+            exercise: "Cardio workouts, strength training, and flexibility exercises."
         },
     ];
-
-
 
     const handleFilter = (filter) => {
         setActiveFilter(filter);
     };
 
     const filteredContent = (data) => {
-        if (activeFilter === 'all') return data;
+        if (activeFilter === 'favorites') {
+            return data.filter((item) => favorites.includes(item.id));
+        }
         if (activeFilter === 'latest') {
             return data.filter((item) => new Date(item.timestamp) > Date.now() - 7 * 24 * 60 * 60 * 1000);
         }
         return data;
     };
 
-    const renderContent = (contentData) =>
-        filteredContent(contentData).map((item) => {
-            const formattedTimestamp = new Intl.DateTimeFormat('en-US', {
-                dateStyle: 'medium',
-                timeStyle: 'short',
-            }).format(new Date(item.timestamp));
-
-            return (
-                <div key={item.id} className="content-card mb-4 p-4 bg-white border rounded shadow-sm">
-                    <h3 className="text-xl font-semibold">{item.title}</h3>
-                    <p className="text-gray-700">{item.description}</p>
-                    <p className="text-sm text-gray-500">{`Posted on: ${formattedTimestamp}`}</p>
-                    <button
-                        className="text-blue-500 hover:underline"
-                        onClick={() => setExpandedCard(expandedCard === item.id ? null : item.id)}
-                    >
-                        {expandedCard === item.id ? 'Show Less' : 'Read More'}
-                    </button>
-                    {expandedCard === item.id && <p className="mt-2 text-gray-600">{item.content}</p>}
-                </div>
-            );
-        });
-
-    const handleLike = (id) => {
-        setLikes((prevLikes) => ({ ...prevLikes, [id]: (prevLikes[id] || 0) + 1 }));
+    const handleMenuToggle = (id) => {
+        setMenuOpen(menuOpen === id ? null : id);
     };
 
-    const handleComment = (id) => {
-        setCommentModal(id);
-    };
-
-    const handleSendComment = () => {
-        if (commentInput.trim() !== "") {
-            setCommentList((prevComments) => ({
-                ...prevComments,
-                [commentModal]: [...(prevComments[commentModal] || []), commentInput],
-            }));
-            setCommentInput("");
-        }
-    };
 
     const handleShare = (id) => {
-        console.log(`Shared post ${id}`);
+        console.log(`Shared item ${id}`);
+        setMenuOpen(null);
+    };
+
+    const handleToggleFavorite = (id) => {
+        if (favorites.includes(id)) {
+            setFavorites(favorites.filter((favId) => favId !== id));
+            setSuccessMessage("Removed from favorites ❌");
+        } else {
+            setFavorites([...favorites, id]);
+            setSuccessMessage("Added to favorites ✅");
+        }
+
+        setTimeout(() => {
+            setSuccessMessage("");
+        }, 3000);
+
+        setMenuOpen(null);
     };
 
 
@@ -115,6 +96,13 @@ const ResourcePage = () => {
 
     return (
         <div className='bg-gray-100 min-h-screen'>
+            {/* ✅ Success Notification */}
+            {successMessage && (
+                <div className="fixed top-5 left-1/2 transform -translate-x-1/2 bg-teal-500 text-white px-4 py-2 rounded shadow-lg z-50 transition-opacity duration-500">
+                    {successMessage}
+                </div>
+            )}
+
             <div className="sticky top-0 z-20">
                 <div className="fixed top-4 left-4 z-50">
                     <Link to="/" className="">
@@ -124,9 +112,7 @@ const ResourcePage = () => {
                 <Navbar />
             </div>
 
-            <div>
-                <h3 className='text-center text-gray-500 text-3xl font-semibold m-4'>Resource Center</h3>
-            </div>
+            <h3 className='text-center text-gray-500 text-3xl font-semibold m-4'>Resource Center</h3>
 
             <div className='p-4'>
                 <div className="flex justify-center gap-14 p-2 mb-6">
@@ -153,62 +139,50 @@ const ResourcePage = () => {
                     {activeTab === 'news' && (
                         <div className="flex gap-2 overflow-x-auto hide-scrollbar p-2">
                             <button
-                                className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'all' ? 'bg-blue-500 text-white border-2 border-blue-500' : 'border-blue-500 border-2 bg-white'}`}
+                                className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'all' ? 'bg-blue-500 text-white' : 'border border-blue-500'}`}
                                 onClick={() => handleFilter('all')}
                             >
                                 All
                             </button>
                             <button
-                                className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'top' ? 'bg-blue-500 text-white border-2 border-blue-500' : 'border-blue-500 border-2 bg-white'}`}
-                                onClick={() => handleFilter('top')}
-                            >
-                                Top
-                            </button>
-                            <button
-                                className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'latest' ? 'bg-blue-500 text-white border-2 border-blue-500' : 'border-blue-500 border-2 bg-white'}`}
+                                className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'latest' ? 'bg-blue-500 text-white' : 'border border-blue-500'}`}
                                 onClick={() => handleFilter('latest')}
                             >
                                 Latest
                             </button>
                             <button
-                                className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === '' ? 'bg-blue-500 text-white border-2 border-blue-500' : 'border-blue-500 border-2 bg-white'}`}
+                                className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'favorites' ? 'bg-blue-500 text-white' : 'border border-blue-500'}`}
                                 onClick={() => handleFilter('favorites')}
                             >
                                 Favorites
                             </button>
                         </div>
                     )}
+
                     {activeTab === 'articles' && (
                         <div className="flex gap-2 overflow-x-auto hide-scrollbar p-2">
                             <button
-                                className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'all' ? 'bg-blue-500 text-white border-2 border-blue-500' : 'border-blue-500 border-2 bg-white'}`}
+                                className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'all' ? 'bg-blue-500 text-white' : 'border border-blue-500'}`}
                                 onClick={() => handleFilter('all')}
                             >
                                 All
                             </button>
+                            
                             <button
-                                className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'favorites' ? 'bg-blue-500 text-white border-2 border-blue-500' : 'border-blue-500 border-2 bg-white'}`}
+                                className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'favorites' ? 'bg-blue-500 text-white' : 'border border-blue-500'}`}
                                 onClick={() => handleFilter('favorites')}
                             >
                                 Favorites
                             </button>
                             <button
-                                className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'orthopedic' ? 'bg-blue-500 text-white border-2 border-blue-500' : 'border-blue-500 border-2 bg-white'}`}
+                                className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'orthopedic' ? 'bg-blue-500 text-white' : 'border border-blue-500'}`}
                                 onClick={() => handleFilter('orthopedic')}
                             >
                                 Orthopedic
                             </button>
-                            <button
-                                className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'neurological' ? 'bg-blue-500 text-white border-2 border-blue-500' : 'border-blue-500 border-2 bg-white'}`}
-                                onClick={() => handleFilter('neurological')}
-                            >
-                                Neurological
-                            </button>
-
                         </div>
                     )}
                 </div>
-
 
                 {activeTab === 'news' && (
                     <div className="news-tab">
@@ -219,19 +193,27 @@ const ResourcePage = () => {
                             }).format(new Date(item.timestamp));
 
                             return (
-                                <div key={item.id} className="content-card mb-4 mx-3 p-4 bg-white border rounded shadow-sm">
-                                    <div className="flex justify-end gap-3 p-2 text-gray-500">
-                                        <div className="flex items-center gap-1 cursor-pointer" onClick={() => handleLike(item.id)}>
-                                            <FaThumbsUp />
-                                            <span>{likes[item.id] || 0}</span>
-                                        </div>
-                                        <div className="flex items-center gap-1 cursor-pointer" onClick={() => handleComment(item.id)}>
-                                            <FaComment />
-                                            <span>{comments[item.id] || 0}</span>
-                                        </div>
-                                        <FaShare className="cursor-pointer" onClick={() => handleShare(item.id)} />
+                                <div key={item.id} className="relative content-card mb-4 mx-3 p-4 bg-white border rounded shadow-sm">
+                                    <div className="absolute top-2 right-2">
+                                        <button onClick={() => handleMenuToggle(item.id)} className="text-gray-600">
+                                            <FaEllipsisV />
+                                        </button>
+                                        {menuOpen === item.id && (
 
+
+                                            <div className="absolute right-0 mt-2 w-40 bg-white border rounded shadow-lg">
+                                                <button
+                                                    className="block w-full px-4 py-2 text-left hover:bg-gray-100"
+                                                    onClick={() => handleToggleFavorite(item.id)}
+                                                >
+                                                    {favorites.includes(item.id) ? "Remove from Favorites" : "Add to Favorites"}
+                                                </button>
+                                            </div>
+
+
+                                        )}
                                     </div>
+
                                     <h3 className="text-xl font-semibold">{item.title}</h3>
                                     <p className="text-gray-700">{item.description}</p>
                                     <p className="text-sm text-gray-500">{`Posted on: ${formattedTimestamp}`}</p>
@@ -241,69 +223,63 @@ const ResourcePage = () => {
                                     >
                                         {expandedCard === item.id ? 'Show Less' : 'Read More'}
                                     </button>
-                                    {expandedCard === item.id && (
-                                        <p className="mt-2 text-gray-600">{item.content}</p>
-                                    )}
+                                    {expandedCard === item.id && <p className="mt-2 text-gray-600">{item.content}</p>}
                                 </div>
                             );
                         })}
                     </div>
                 )}
 
-                {commentModal !== null && (
-                    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-                        <div className="bg-white p-6 rounded-lg w-96">
-                            <h3 className="text-xl font-semibold mb-4">Comments</h3>
-                            <div className="mb-4 max-h-40 overflow-y-auto">
-                                {(commentList[commentModal] || []).map((comment, index) => (
-                                    <p key={index} className="p-2 bg-gray-100 rounded mb-2">{comment}</p>
-                                ))}
-                            </div>
-                            <textarea
-                                className="w-full p-2 border rounded mb-2"
-                                placeholder="Write a comment..."
-                                value={commentInput}
-                                onChange={(e) => setCommentInput(e.target.value)}
-                            ></textarea>
-                            <div className="flex justify-between">
-                                <button className="bg-blue-500 text-white px-4 py-2 rounded" onClick={handleSendComment}>Send</button>
-                                <button className="bg-gray-500 text-white px-4 py-2 rounded" onClick={() => setCommentModal(null)}>Close</button>
-                            </div>
-                        </div>
-                    </div>
-                )}
+                {/* ✅ Articles Tab */}
                 {activeTab === 'articles' && (
                     <div className="articles-tab">
-                        {filteredContent(articles).map((item) => {
-                            const formattedTimestamp = new Intl.DateTimeFormat('en-US', {
-                                dateStyle: 'medium',
-                                timeStyle: 'short',
-                            }).format(new Date(item.timestamp));
+                        {articles.map(item => (
+                            <div key={item.id} className="relative content-card mb-4 mx-3 p-4 bg-white border rounded shadow-sm">
 
-                            return (
-                                <div key={item.id} className="content-card mb-4 mx-3 p-4 bg-white border rounded shadow-sm">
-                                    <h3 className="text-xl font-semibold">{item.title}</h3>
-                                    <p className="text-gray-700">{item.description}</p>
-                                    <p className="text-sm text-gray-500">{`Posted on: ${formattedTimestamp}`}</p>
-                                    <button
-                                        className="text-blue-500 hover:underline"
-                                        onClick={() => setExpandedCard(expandedCard === item.id ? null : item.id)}
-                                    >
-                                        {expandedCard === item.id ? 'Show Less' : 'Read More'}
+                                <div className="absolute top-2 right-2">
+                                    <button onClick={() => handleMenuToggle(item.id)} className="text-gray-600">
+                                        <FaEllipsisV />
                                     </button>
-                                    {expandedCard === item.id && (
-                                        <p className="mt-2 text-gray-600">{item.content}</p>
+                                    {menuOpen === item.id && (
+
+
+                                        <div className="absolute right-0 mt-2 w-40 bg-white border rounded shadow-lg">
+                                            <button className="block w-full px-4 py-2 text-left hover:bg-gray-100" onClick={() => handleToggleFavorite(item.id)}>
+                                                {favorites.includes(item.id) ? "Remove from Favorites" : "Add to Favorites"}
+                                            </button>
+                                            <button className="block w-full px-4 py-2 text-left hover:bg-gray-100">Add Exercise to Library</button>
+                                        </div>
+
+
                                     )}
                                 </div>
-                            );
-                        })}
+
+                                <h3 className="text-xl font-semibold">{item.title}</h3>
+                                <p className="text-gray-700">{item.description}</p>
+                                <button
+                                    className="text-blue-500 hover:underline"
+                                    onClick={() => setExpandedCard(expandedCard === item.id ? null : item.id)}
+                                >
+                                    {expandedCard === item.id ? 'Show Less' : 'Read More'}
+                                </button>
+                                {expandedCard === item.id && (
+                                    <div className="mt-2">
+                                        <p className="text-gray-600"><strong>Causes:</strong> {item.causes}</p>
+                                        <p className="text-gray-700"><strong>Diagnosis:</strong> {item.diagnosis}</p>
+                                        <p className="text-gray-700"><strong>Treatment:</strong> {item.treatment}</p>
+                                        <p className="text-gray-700"><strong>Exercise:</strong> {item.exercise}</p>
+                                    </div>
+                                )}
+
+                            </div>
+                        ))}
                     </div>
                 )}
+
 
             </div>
         </div>
     );
-
 };
 
 export default ResourcePage;
