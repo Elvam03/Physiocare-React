@@ -146,7 +146,7 @@ const Landing = () => {
                                 Connecting you to top physiotherapy resources
                             </h2>
                             <div className="mt-6 space-x-4">
-                               
+
                                 <Link
                                     to="/signup"
                                     className="inline-block py-3 px-6 bg-blue-900 text-white font-semibold rounded-full hover:bg-blue-700 hover:text-white transition-colors duration-300"
@@ -159,7 +159,7 @@ const Landing = () => {
                                 >
                                     Learn More
                                 </Link>
-                               
+
                             </div>
                         </div>
                     </div>
@@ -234,6 +234,14 @@ const Landing = () => {
                 </div>
             </section>
 
+            {/* Wellness Quote Section */}
+            <div className="relative flex items-center justify-center py-10">
+                <div className="bg-gradient-to-r from-blue-900 to-teal-500 text-white text-center font-semibold text-2xl p-6 tracking-wider rounded-lg shadow-lg w-11/12 md:w-3/4 lg:w-2/3">
+                    <h2 className="text-3xl md:text-4xl font-bold">"Take care of your body.</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold">It’s the only place you have to live."</h2>
+                    <h2 className="text-lg md:text-xl mt-4 italic opacity-80">— Jim Rohn</h2>
+                </div>
+            </div>
 
 
 

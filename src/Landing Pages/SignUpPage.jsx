@@ -121,6 +121,15 @@ const SignUpPage = () => {
               >
                 Sign Up
               </button>
+              <Link to="/dashboard">
+              
+              <button
+              className="bg-gray-500 text-white p-3 rounded"
+              >
+                Continue as Guest
+              </button>
+
+              </Link>
             </form>
           </div>
         </section>
@@ -192,6 +201,15 @@ const SignUpPage = () => {
               >
                 Sign Up
               </button>
+              <Link to="/physioDashboard">
+              
+              <button
+              className="bg-gray-500 text-white p-3 rounded"
+              >
+                Continue as Guest
+              </button>
+
+              </Link>
             </form>
           </div>
         </section>

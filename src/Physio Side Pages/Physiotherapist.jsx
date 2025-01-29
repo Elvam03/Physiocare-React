@@ -258,7 +258,7 @@ const Physiotherapist = () => {
                                                 Book
                                             </button>
                                             <Link
-                                                to="/chat"
+                                                to="/physioChats"
                                                 className="text-blue-500 ml-4 hover:underline mt-4"
                                             >
                                                 Message

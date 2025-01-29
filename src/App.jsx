@@ -27,6 +27,7 @@ import PhysioLibrary from './Physio Side Pages/PhysioLibrary.jsx';
 import PhysioCommunity from './Physio Side Pages/PhysioCommunity.jsx';
 import PhysioSettings from './Physio Side Pages/PhysioSettings.jsx';
 import AboutPage from './Landing Pages/AboutPage.jsx';
+import FacilityPage from './Landing Pages/FacilityPage.jsx';
 
 
 
@@ -66,6 +67,8 @@ function App() {
          <Route path="/physioSettings" element={<PhysioSettings />} />
          <Route path="/resourcePage" element={<ResourcePage />} />
          <Route path="/aboutPage" element={<AboutPage />} />
+         <Route path="/facilityPage" element={<FacilityPage />} />
+
 
 
 

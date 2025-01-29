@@ -8,9 +8,9 @@ const FacilitySection = () => {
     const [selectedLocation, setSelectedLocation] = useState("");   
 
     const advertisements = [
-        { title: "Premium Care Clinic", link: "#", image: "/Images/hospital1.jpg", description: "Advanced treatments with top doctors." },
-        { title: "Health First Medical", link: "#", image: "/Images/hospital2.jpg", description: "Your health, our priority." },
-        { title: "Family Wellness Center", link: "#", image: "/Images/hospital3.jpg", description: "Comprehensive family health services." },
+        { title: "Premium Care Clinic", link: "facilityPage", image: "/Images/hospital1.jpg", description: "Advanced treatments with top doctors." },
+        { title: "Health First Medical", link: "/facilityPage", image: "/Images/hospital2.jpg", description: "Your health, our priority." },
+        { title: "Family Wellness Center", link: "/facilityPage", image: "/Images/hospital3.jpg", description: "Comprehensive family health services." },
     ];
 
     const locations = ["Mombasa", "Kakamega", "Nairobi", "Eldoret", "Nakuru", "Kisumu", "Lamu", "Kisii", "Busia"];
