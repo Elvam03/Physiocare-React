@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 import Navbar from "../Properties/Navbar";
 import { Link } from "react-router-dom";
+import { FaThumbsUp, FaComment, FaShare } from 'react-icons/fa';
 
 const ResourcePage = () => {
     const [activeTab, setActiveTab] = useState('news');
     const [expandedCard, setExpandedCard] = useState(null);
-    const [activeFilter, setActiveFilter] = useState('all'); // For filtering
+    const [activeFilter, setActiveFilter] = useState('all');
+    const [likes, setLikes] = useState({});
+    const [comments, setComments] = useState({});
+    const [commentModal, setCommentModal] = useState(null);
+    const [commentInput, setCommentInput] = useState("");
+    const [commentList, setCommentList] = useState({});
 
     const newsAndBlog = [
         {
@@ -23,34 +29,7 @@ const ResourcePage = () => {
             timestamp: "2025-01-28T10:30:00",
 
         },
-        {
-            id: 3,
-            title: "Augmented Reality (AR) Applications",
-            description: "Physiotherapy and Tech",
-            content: "AR is being explored to assist patients with neurological conditions. A startup named Strolll has developed an AR program that projects virtual lines on the ground to guide patients with Parkinson's disease, helping them overcome mobility challenges. This technology also includes gamified rehabilitation exercises to enhance patient engagement. ",
-            timestamp: "2025-01-24T11:10:00",
 
-
-        },
-        {
-            id: 4,
-            title: "Wearable Technology",
-            description: "Technology devices used in fitness.",
-            content: "Wearable devices continue to gain popularity in physiotherapy. The American College of Sports Medicine identified wearable technology as the top fitness trend for 2025. These devices monitor various health metrics, providing data that can inform personalized treatment plans and track patient progress.",
-            timestamp: "2025-01-20T21:10:00",
-
-
-        },
-
-        {
-            id: 5,
-            title: "Telehealth Services",
-            description: "Digital world of physiotherapy",
-            content: "The adoption of telehealth in physiotherapy has expanded, providing patients with greater access to care. Virtual consultations and remote monitoring allow for flexible treatment options, especially beneficial for those with limited mobility or in remote areas.",
-            timestamp: "2025-01-15T19:50:00",
-
-
-        },
     ];
 
     const articles = [
@@ -73,7 +52,7 @@ const ResourcePage = () => {
     ];
 
 
-    
+
     const handleFilter = (filter) => {
         setActiveFilter(filter);
     };
@@ -83,7 +62,7 @@ const ResourcePage = () => {
         if (activeFilter === 'latest') {
             return data.filter((item) => new Date(item.timestamp) > Date.now() - 7 * 24 * 60 * 60 * 1000);
         }
-        return data; 
+        return data;
     };
 
     const renderContent = (contentData) =>
@@ -109,188 +88,222 @@ const ResourcePage = () => {
             );
         });
 
+    const handleLike = (id) => {
+        setLikes((prevLikes) => ({ ...prevLikes, [id]: (prevLikes[id] || 0) + 1 }));
+    };
+
+    const handleComment = (id) => {
+        setCommentModal(id);
+    };
+
+    const handleSendComment = () => {
+        if (commentInput.trim() !== "") {
+            setCommentList((prevComments) => ({
+                ...prevComments,
+                [commentModal]: [...(prevComments[commentModal] || []), commentInput],
+            }));
+            setCommentInput("");
+        }
+    };
+
+    const handleShare = (id) => {
+        console.log(`Shared post ${id}`);
+    };
 
 
-            return (
-                <div className='bg-gray-100 min-h-screen'>
-                    <div className="sticky top-0 z-20">
-                        <div className="fixed top-4 left-4 z-50">
-                            <Link to="/" className="">
-                                <img src="/Images/back.png" alt="Back" className="h-8 w-8 md:h-12 md:w-12" />
-                            </Link>
-                        </div>
-                        <Navbar />
-                    </div>
 
-                    <div>
-                        <h3 className='text-center text-gray-500 text-3xl font-semibold m-4'>Resource Center</h3>
-                    </div>
 
-                    <div className='p-4'>
-                        <div className="flex justify-center gap-14 p-2 mb-6">
+    return (
+        <div className='bg-gray-100 min-h-screen'>
+            <div className="sticky top-0 z-20">
+                <div className="fixed top-4 left-4 z-50">
+                    <Link to="/" className="">
+                        <img src="/Images/back.png" alt="Back" className="h-8 w-8 md:h-12 md:w-12" />
+                    </Link>
+                </div>
+                <Navbar />
+            </div>
+
+            <div>
+                <h3 className='text-center text-gray-500 text-3xl font-semibold m-4'>Resource Center</h3>
+            </div>
+
+            <div className='p-4'>
+                <div className="flex justify-center gap-14 p-2 mb-6">
+                    <button
+                        className={`tab-button mr-5 ${activeTab === "news"
+                            ? "border-b-4 border-blue-500 font-semibold text-blue-600"
+                            : "text-gray-600"}`}
+                        onClick={() => setActiveTab('news')}
+                    >
+                        News & Blog
+                    </button>
+                    <button
+                        className={`tab-button ${activeTab === "articles"
+                            ? "border-b-4 border-blue-500 font-semibold text-blue-600"
+                            : "text-gray-600"}`}
+                        onClick={() => setActiveTab('articles')}
+                    >
+                        Articles
+                    </button>
+                </div>
+
+                {/* Filters */}
+                <div className="flex justify-center mb-4">
+                    {activeTab === 'news' && (
+                        <div className="flex gap-2 overflow-x-auto hide-scrollbar p-2">
                             <button
-                                className={`tab-button mr-5 ${activeTab === "news"
-                                    ? "border-b-4 border-blue-500 font-semibold text-blue-600"
-                                    : "text-gray-600"}`}
-                                onClick={() => setActiveTab('news')}
+                                className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'all' ? 'bg-blue-500 text-white border-2 border-blue-500' : 'border-blue-500 border-2 bg-white'}`}
+                                onClick={() => handleFilter('all')}
                             >
-                                News & Blog
+                                All
                             </button>
                             <button
-                                className={`tab-button ${activeTab === "articles"
-                                    ? "border-b-4 border-blue-500 font-semibold text-blue-600"
-                                    : "text-gray-600"}`}
-                                onClick={() => setActiveTab('articles')}
+                                className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'top' ? 'bg-blue-500 text-white border-2 border-blue-500' : 'border-blue-500 border-2 bg-white'}`}
+                                onClick={() => handleFilter('top')}
                             >
-                                Articles
+                                Top
+                            </button>
+                            <button
+                                className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'latest' ? 'bg-blue-500 text-white border-2 border-blue-500' : 'border-blue-500 border-2 bg-white'}`}
+                                onClick={() => handleFilter('latest')}
+                            >
+                                Latest
+                            </button>
+                            <button
+                                className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === '' ? 'bg-blue-500 text-white border-2 border-blue-500' : 'border-blue-500 border-2 bg-white'}`}
+                                onClick={() => handleFilter('favorites')}
+                            >
+                                Favorites
                             </button>
                         </div>
+                    )}
+                    {activeTab === 'articles' && (
+                        <div className="flex gap-2 overflow-x-auto hide-scrollbar p-2">
+                            <button
+                                className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'all' ? 'bg-blue-500 text-white border-2 border-blue-500' : 'border-blue-500 border-2 bg-white'}`}
+                                onClick={() => handleFilter('all')}
+                            >
+                                All
+                            </button>
+                            <button
+                                className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'favorites' ? 'bg-blue-500 text-white border-2 border-blue-500' : 'border-blue-500 border-2 bg-white'}`}
+                                onClick={() => handleFilter('favorites')}
+                            >
+                                Favorites
+                            </button>
+                            <button
+                                className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'orthopedic' ? 'bg-blue-500 text-white border-2 border-blue-500' : 'border-blue-500 border-2 bg-white'}`}
+                                onClick={() => handleFilter('orthopedic')}
+                            >
+                                Orthopedic
+                            </button>
+                            <button
+                                className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'neurological' ? 'bg-blue-500 text-white border-2 border-blue-500' : 'border-blue-500 border-2 bg-white'}`}
+                                onClick={() => handleFilter('neurological')}
+                            >
+                                Neurological
+                            </button>
 
-                        {/* Filters */}
-                        <div className="flex justify-center mb-4">
-                            {activeTab === 'news' && (
-                                <div className="flex gap-2 overflow-x-auto hide-scrollbar p-2">
-                                    <button
-                                        className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'all' ? 'bg-blue-500 text-white border-2 border-blue-500' : 'border-blue-500 border-2 bg-white'}`}
-                                        onClick={() => handleFilter('all')}
-                                    >
-                                        All
-                                    </button>
-                                    <button
-                                        className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'top' ? 'bg-blue-500 text-white border-2 border-blue-500' : 'border-blue-500 border-2 bg-white'}`}
-                                        onClick={() => handleFilter('top')}
-                                    >
-                                        Top
-                                    </button>
-                                    <button
-                                        className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'latest' ? 'bg-blue-500 text-white border-2 border-blue-500' : 'border-blue-500 border-2 bg-white'}`}
-                                        onClick={() => handleFilter('latest')}
-                                    >
-                                        Latest
-                                    </button>
-                                </div>
-                            )}
-                            {activeTab === 'articles' && (
-                                <div className="flex gap-2 overflow-x-auto hide-scrollbar p-2">
-                                    <button
-                                        className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'all' ? 'bg-blue-500 text-white border-2 border-blue-500' : 'border-blue-500 border-2 bg-white'}`}
-                                        onClick={() => handleFilter('all')}
-                                    >
-                                        All
-                                    </button>
-                                    <button
-                                        className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'orthopedic' ? 'bg-blue-500 text-white border-2 border-blue-500' : 'border-blue-500 border-2 bg-white'}`}
-                                        onClick={() => handleFilter('orthopedic')}
-                                    >
-                                        Orthopedic
-                                    </button>
-                                    <button
-                                        className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'neurological' ? 'bg-blue-500 text-white border-2 border-blue-500' : 'border-blue-500 border-2 bg-white'}`}
-                                        onClick={() => handleFilter('neurological')}
-                                    >
-                                        Neurological
-                                    </button>
-                                    <button
-                                        className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'cardiovascular' ? 'bg-blue-500 text-white border-2 border-blue-500' : 'border-blue-500 border-2 bg-white'}`}
-                                        onClick={() => handleFilter('cardiovascular')}
-                                    >
-                                        Cardiovascular
-                                    </button>
-                                    <button
-                                        className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'pediatric' ? 'bg-blue-500 text-white border-2 border-blue-500' : 'border-blue-500 border-2 bg-white'}`}
-                                        onClick={() => handleFilter('pediatric')}
-                                    >
-                                        Pediatric
-                                    </button>
-                                    <button
-                                        className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'geriatric' ? 'bg-blue-500 text-white border-2 border-blue-500' : 'border-blue-500 border-2 bg-white'}`}
-                                        onClick={() => handleFilter('geriatric')}
-                                    >
-                                        Geriatric
-                                    </button>
-                                    <button
-                                        className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'sports' ? 'bg-blue-500 text-white border-2 border-blue-500' : 'border-blue-500 border-2 bg-white'}`}
-                                        onClick={() => handleFilter('sports')}
-                                    >
-                                        Sports
-                                    </button>
-                                    <button
-                                        className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'oncology' ? 'bg-blue-500 text-white border-2 border-blue-500' : 'border-blue-500 border-2 bg-white'}`}
-                                        onClick={() => handleFilter('oncology')}
-                                    >
-                                        Oncology
-                                    </button>
-                                    <button
-                                        className={`filter-button px-8 py-2 mx-2 rounded-full ${activeFilter === 'occupational' ? 'bg-blue-500 text-white border-2 border-blue-500' : 'border-blue-500 border-2 bg-white'}`}
-                                        onClick={() => handleFilter('occupational')}
-                                    >
-                                        Occupational
-                                    </button>
-                                </div>
-                            )}
                         </div>
-
-
-                        {activeTab === 'news' && (
-    <div className="news-tab">
-        {filteredContent(newsAndBlog).map((item) => {
-            const formattedTimestamp = new Intl.DateTimeFormat('en-US', {
-                dateStyle: 'medium',
-                timeStyle: 'short',
-            }).format(new Date(item.timestamp));
-
-            return (
-                <div key={item.id} className="content-card mb-4 mx-3 p-4 bg-white border rounded shadow-sm">
-                    <h3 className="text-xl font-semibold">{item.title}</h3>
-                    <p className="text-gray-700">{item.description}</p>
-                    <p className="text-sm text-gray-500">{`Posted on: ${formattedTimestamp}`}</p>
-                    <button
-                        className="text-blue-500 hover:underline"
-                        onClick={() => setExpandedCard(expandedCard === item.id ? null : item.id)}
-                    >
-                        {expandedCard === item.id ? 'Show Less' : 'Read More'}
-                    </button>
-                    {expandedCard === item.id && (
-                        <p className="mt-2 text-gray-600">{item.content}</p>
                     )}
                 </div>
-            );
-        })}
-    </div>
-)}
 
-{activeTab === 'articles' && (
-    <div className="articles-tab">
-        {filteredContent(articles).map((item) => {
-            const formattedTimestamp = new Intl.DateTimeFormat('en-US', {
-                dateStyle: 'medium',
-                timeStyle: 'short',
-            }).format(new Date(item.timestamp));
 
-            return (
-                <div key={item.id} className="content-card mb-4 mx-3 p-4 bg-white border rounded shadow-sm">
-                    <h3 className="text-xl font-semibold">{item.title}</h3>
-                    <p className="text-gray-700">{item.description}</p>
-                    <p className="text-sm text-gray-500">{`Posted on: ${formattedTimestamp}`}</p>
-                    <button
-                        className="text-blue-500 hover:underline"
-                        onClick={() => setExpandedCard(expandedCard === item.id ? null : item.id)}
-                    >
-                        {expandedCard === item.id ? 'Show Less' : 'Read More'}
-                    </button>
-                    {expandedCard === item.id && (
-                        <p className="mt-2 text-gray-600">{item.content}</p>
-                    )}
-                </div>
-            );
-        })}
-    </div>
-)}
+                {activeTab === 'news' && (
+                    <div className="news-tab">
+                        {filteredContent(newsAndBlog).map((item) => {
+                            const formattedTimestamp = new Intl.DateTimeFormat('en-US', {
+                                dateStyle: 'medium',
+                                timeStyle: 'short',
+                            }).format(new Date(item.timestamp));
 
+                            return (
+                                <div key={item.id} className="content-card mb-4 mx-3 p-4 bg-white border rounded shadow-sm">
+                                    <div className="flex justify-end gap-3 p-2 text-gray-500">
+                                        <div className="flex items-center gap-1 cursor-pointer" onClick={() => handleLike(item.id)}>
+                                            <FaThumbsUp />
+                                            <span>{likes[item.id] || 0}</span>
+                                        </div>
+                                        <div className="flex items-center gap-1 cursor-pointer" onClick={() => handleComment(item.id)}>
+                                            <FaComment />
+                                            <span>{comments[item.id] || 0}</span>
+                                        </div>
+                                        <FaShare className="cursor-pointer" onClick={() => handleShare(item.id)} />
+
+                                    </div>
+                                    <h3 className="text-xl font-semibold">{item.title}</h3>
+                                    <p className="text-gray-700">{item.description}</p>
+                                    <p className="text-sm text-gray-500">{`Posted on: ${formattedTimestamp}`}</p>
+                                    <button
+                                        className="text-blue-500 hover:underline"
+                                        onClick={() => setExpandedCard(expandedCard === item.id ? null : item.id)}
+                                    >
+                                        {expandedCard === item.id ? 'Show Less' : 'Read More'}
+                                    </button>
+                                    {expandedCard === item.id && (
+                                        <p className="mt-2 text-gray-600">{item.content}</p>
+                                    )}
+                                </div>
+                            );
+                        })}
                     </div>
-                </div>
-            );
-        
+                )}
+
+                {commentModal !== null && (
+                    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+                        <div className="bg-white p-6 rounded-lg w-96">
+                            <h3 className="text-xl font-semibold mb-4">Comments</h3>
+                            <div className="mb-4 max-h-40 overflow-y-auto">
+                                {(commentList[commentModal] || []).map((comment, index) => (
+                                    <p key={index} className="p-2 bg-gray-100 rounded mb-2">{comment}</p>
+                                ))}
+                            </div>
+                            <textarea
+                                className="w-full p-2 border rounded mb-2"
+                                placeholder="Write a comment..."
+                                value={commentInput}
+                                onChange={(e) => setCommentInput(e.target.value)}
+                            ></textarea>
+                            <div className="flex justify-between">
+                                <button className="bg-blue-500 text-white px-4 py-2 rounded" onClick={handleSendComment}>Send</button>
+                                <button className="bg-gray-500 text-white px-4 py-2 rounded" onClick={() => setCommentModal(null)}>Close</button>
+                            </div>
+                        </div>
+                    </div>
+                )}
+                {activeTab === 'articles' && (
+                    <div className="articles-tab">
+                        {filteredContent(articles).map((item) => {
+                            const formattedTimestamp = new Intl.DateTimeFormat('en-US', {
+                                dateStyle: 'medium',
+                                timeStyle: 'short',
+                            }).format(new Date(item.timestamp));
+
+                            return (
+                                <div key={item.id} className="content-card mb-4 mx-3 p-4 bg-white border rounded shadow-sm">
+                                    <h3 className="text-xl font-semibold">{item.title}</h3>
+                                    <p className="text-gray-700">{item.description}</p>
+                                    <p className="text-sm text-gray-500">{`Posted on: ${formattedTimestamp}`}</p>
+                                    <button
+                                        className="text-blue-500 hover:underline"
+                                        onClick={() => setExpandedCard(expandedCard === item.id ? null : item.id)}
+                                    >
+                                        {expandedCard === item.id ? 'Show Less' : 'Read More'}
+                                    </button>
+                                    {expandedCard === item.id && (
+                                        <p className="mt-2 text-gray-600">{item.content}</p>
+                                    )}
+                                </div>
+                            );
+                        })}
+                    </div>
+                )}
+
+            </div>
+        </div>
+    );
+
 };
 
 export default ResourcePage;

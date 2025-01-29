@@ -28,13 +28,13 @@ const ResourceCenter = () => {
       id: 1,
       title: "Understanding Chronic Pain",
       description: "An in-depth look at the causes and treatments of chronic pain.",
-      link: "/articles/chronic-pain",
+      link: "/resourcePage",
     },
     {
       id: 2,
       title: "Benefits of Regular Exercise",
       description: "Why staying active is essential for your health.",
-      link: "/articles/regular-exercise",
+      link: "/resourcePage",
     },
   ];
 
